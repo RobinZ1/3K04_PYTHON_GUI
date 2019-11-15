@@ -1,0 +1,1 @@
+{"AOO_LRL": 1, "AOO_URL": 1, "AOO_AA": 1.0, "AOO_APW": 1.0, "VOO_LRL": -1, "VOO_URL": -1, "VOO_VA": -1, "VOO_VPW": -1, "AAI_LRL": -1, "AAI_URL": -1, "AAI_AA": -1, "AAI_VPW": -1, "AAI_VRP": -1, "VVI_LRL": -1, "VVI_URL": -1, "VVI_VA": -1, "VVI_VPW": -1, "VVI_VRP": -1}

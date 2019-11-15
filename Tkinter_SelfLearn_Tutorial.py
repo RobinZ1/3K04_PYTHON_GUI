@@ -342,6 +342,7 @@ window.mainloop()
 import tkinter as tk
 import tkinter.messagebox
 import pickle
+import json
 
 window = tk.Tk()
 
@@ -373,94 +374,247 @@ entry_usr_pwd.place(x=120,y=215)
 
 
 #Mode Selection Function
+#AOO
+global AOO_LRL1
+AOO_LRL1 = -1
+AOO_LRL = tk.IntVar();
+
+global AOO_URL1
+AOO_URL1 = -1
+AOO_URL = tk.IntVar()
+
+global AOO_AA1
+AOO_AA1 = -1
+AOO_AA = tk.DoubleVar()
+
+global AOO_APW1
+AOO_APW1 = -1
+AOO_APW = tk.DoubleVar()
+
+#VOO
+global VOO_LRL1
+VOO_LRL1 = -1
+VOO_LRL = tk.IntVar();
+
+global VOO_URL1
+VOO_URL1 = -1
+VOO_URL = tk.IntVar()
+
+global VOO_VA1
+VOO_VA1 = -1
+VOO_VA = tk.DoubleVar()
+
+global VOO_VPW1
+VOO_VPW1 = -1
+VOO_VPW = tk.DoubleVar()
+
+#VVI
+global VVI_LRL1
+VVI_LRL1 = -1
+VVI_LRL = tk.IntVar();
+
+global VVI_URL1
+VVI_URL1 = -1
+VVI_URL = tk.IntVar()
+
+global VVI_VA1
+VVI_VA1 = -1
+VVI_VA = tk.DoubleVar()
+
+global VVI_VPW1
+VVI_VPW1 = -1
+VVI_VPW = tk.DoubleVar()
+
+global VVI_VRP1
+VVI_VRP1 = -1
+VVI_VRP = tk.DoubleVar()
+
+#AAI
+global AAI_LRL1
+AAI_LRL1 = -1
+AAI_LRL = tk.IntVar();
+
+global AAI_URL1
+AAI_URL1 = -1
+AAI_URL = tk.IntVar()
+
+global AAI_AA1
+AAI_AA1 = -1
+AAI_AA = tk.DoubleVar()
+
+global AAI_VPW1
+AAI_VPW1 = -1
+AAI_VPW = tk.DoubleVar()
+
+global AAI_VRP1
+AAI_VRP1 = -1
+AAI_VRP = tk.DoubleVar()
+
+global data_dict
+
+global usrLimit
+
+
+
+def update_dict(string, value):
+    with open('test_data.txt', 'r') as json_file:
+        data_dict = json.load(json_file)
+        print("updated\n")
+        print(data_dict)
+        data_dict[string] = value
+        print(data_dict)
+    with open('test_data.txt', 'w') as json_file:
+        json.dump(data_dict, json_file)
+        json_file.close()
+
+# def update_usr():
+#     with open('test_data.txt','r') as json_file:
+#         data_dict = json.load(json_file)
+#         return False
+
+#         if data_dict['UsrNumbers'] > 2:
+#             json_file.close()
+#             return False
+#         else:
+#             with open('test_data.txt','w') as json_file:
+#                 data_dict['UsrNumbers'] += 1
+#                 json.dump(data_dict, json_file)
+#                 json_file.close()
+#             return True
+
+
+
+
+def ini_file():
+    
+    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_VPW':AAI_VPW1,'AAI_VRP':AAI_VRP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1}
+    with open('test_data.txt','w') as json_file:
+        json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
+
+ini_file()
 
 def Mode_selection():
+
+    
+    
  #Parameters Interface
+    
     window_mode_selection = tk.Toplevel(window)
     window_mode_selection.geometry('600x500')
     window_mode_selection.title('Mode Selection')
-    
+
+#Device connection
+
+    var_device_name = tk.StringVar()
+    entry_device_name = tk.Entry(window_mode_selection, textvariable=var_device_name, font=('Arial',14))
+    entry_device_name.place(x=200,y=175)
+    tk.Label(window_mode_selection, text='Device is connecting',font=('Arial',12)).place(x=200,y=100)
+    tk.Label(window_mode_selection, text='Device',font=('Arial',12)).place(x=140,y=175)
+  
     def Mode_AOO():
+
         window_mode_aoo = tk.Toplevel(window)
         window_mode_aoo.geometry('500x500')
         window_mode_aoo.title('AOO is selected!')
-        LRL = tk.IntVar()
-        LRL_value = tk.Entry(window_mode_aoo, textvariable = LRL, font=('Arial',12))
-        LRL_value.place(x=230,y=175)
+
+        
+        
+        AOO_LRL1 = AOO_LRL.get()
         tk.Label(window_mode_aoo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        LRL_value = tk.Entry(window_mode_aoo, textvariable = AOO_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=175)
 
-        URL = tk.IntVar()
-        URL_value = tk.Entry(window_mode_aoo, textvariable = URL, font=('Arial',12))
-        URL_value.place(x=230,y=205)
+        update_dict('AOO_LRL',AOO_LRL1)
+
+        
+        AOO_URL1 = AOO_URL.get()
         tk.Label(window_mode_aoo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
-            
-        AA = tk.DoubleVar()
-        AA_value = tk.Entry(window_mode_aoo, textvariable = AA, font=('Arial',12))
-        AA_value.place(x=230,y=235)
+        URL_value = tk.Entry(window_mode_aoo, textvariable = AOO_URL, font=('Arial',12))
+        URL_value.place(x=230,y=205)
+
+        update_dict('AOO_URL',AOO_URL1)
+        
+        AOO_AA1 = AOO_AA.get()
         tk.Label(window_mode_aoo, text='Atrial Amplitude(Float): ').place(x=30,y=235)
+        AA_value = tk.Entry(window_mode_aoo, textvariable = AOO_AA, font=('Arial',12))
+        AA_value.place(x=230,y=235)
+        
+        update_dict('AOO_AA',AOO_AA1)
 
-        APW = tk.DoubleVar()
-        APW_value = tk.Entry(window_mode_aoo, textvariable = APW, font=('Arial',12))
-        APW_value.place(x=230,y=265)
+        AOO_APW1 = AOO_APW.get()
         tk.Label(window_mode_aoo, text='Atrial Pulse Width(Float): ').place(x=30,y=265)
+        APW_value = tk.Entry(window_mode_aoo, textvariable = AOO_APW, font=('Arial',12))
+        APW_value.place(x=230,y=265)
 
-       
+        update_dict('AOO_APW',AOO_APW1)
+        
+        # btn_return = tk.Button(window_mode_aoo, text='saved', command=saved_and_return)
+        # btn_return.place(x=230,y=300)
 
     '''VOO'''
     def Mode_VOO():
         window_mode_voo = tk.Toplevel(window)
         window_mode_voo.geometry('500x500')
         window_mode_voo.title('VOO is selected!')
-        LRL = tk.IntVar()
-        LRL_value = tk.Entry(window_mode_voo, textvariable = LRL, font=('Arial',12))
+
+        VOO_LRL1 = VOO_LRL.get()
+        LRL_value = tk.Entry(window_mode_voo, textvariable = VOO_LRL, font=('Arial',12))
         LRL_value.place(x=230,y=175)
         tk.Label(window_mode_voo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        update_dict('VOO_LRL',VOO_LRL1)
 
-        URL = tk.IntVar()
-        URL_value = tk.Entry(window_mode_voo, textvariable = URL, font=('Arial',12))
+        VOO_URL1 = VOO_URL.get()
+        URL_value = tk.Entry(window_mode_voo, textvariable = VOO_URL, font=('Arial',12))
         URL_value.place(x=230,y=205)
         tk.Label(window_mode_voo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
-            
-        VA = tk.DoubleVar()
-        VA_value = tk.Entry(window_mode_voo, textvariable = VA, font=('Arial',12))
+        update_dict('VOO_URL',VOO_URL1)
+
+        VOO_VA1 = VOO_VA.get()
+        VA_value = tk.Entry(window_mode_voo, textvariable = VOO_VA, font=('Arial',12))
         VA_value.place(x=230,y=235)
         tk.Label(window_mode_voo, text='Ventricular Amplitude(Float): ').place(x=30,y=235)
+        update_dict('VOO_VA',VOO_VA1)
 
-        VPW = tk.DoubleVar()
-        VPW_value = tk.Entry(window_mode_voo, textvariable = VPW, font=('Arial',12))
+        VOO_VPW1 = VOO_VPW.get()
+        VPW_value = tk.Entry(window_mode_voo, textvariable = VOO_VPW, font=('Arial',12))
         VPW_value.place(x=230,y=265)
         tk.Label(window_mode_voo, text='Ventricular Pulse Width(Float): ').place(x=30,y=265)
-
+        update_dict('VOO_VPW',VOO_VPW1)
        
     '''AAI'''
     def Mode_AAI():
         window_mode_aai = tk.Toplevel(window)
         window_mode_aai.geometry('500x500')
         window_mode_aai.title('AAI is selected!')
-        LRL = tk.IntVar()
-        LRL_value = tk.Entry(window_mode_aai, textvariable = LRL, font=('Arial',12))
+        AAI_LRL1 = AAI_LRL.get()
+        LRL_value = tk.Entry(window_mode_aai, textvariable = AAI_LRL, font=('Arial',12))
         LRL_value.place(x=230,y=175)
         tk.Label(window_mode_aai, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        update_dict('AAI_LRL',AAI_LRL1)
 
-        URL = tk.IntVar()
-        URL_value = tk.Entry(window_mode_aai, textvariable = URL, font=('Arial',12))
+        AAI_URL1 = AAI_URL.get()
+        URL_value = tk.Entry(window_mode_aai, textvariable = AAI_URL, font=('Arial',12))
         URL_value.place(x=230,y=205)
         tk.Label(window_mode_aai, text='Upper Rate Limit(Int): ').place(x=30,y=205)
-            
-        AA = tk.DoubleVar()
-        AA_value = tk.Entry(window_mode_aai, textvariable = AA, font=('Arial',12))
+        update_dict('AAI_URL',AAI_URL1)
+
+        AAI_AA1 = AAI_AA.get()
+        AA_value = tk.Entry(window_mode_aai, textvariable = AAI_AA, font=('Arial',12))
         AA_value.place(x=230,y=235)
         tk.Label(window_mode_aai, text='Atrial Amplitude(Float): ').place(x=30,y=235)
+        update_dict('AAI_AA',AAI_AA1)
 
-        APW = tk.DoubleVar()
-        APW_value = tk.Entry(window_mode_aai, textvariable = APW, font=('Arial',12))
+        AAI_APW1 = AAI_APW.get()
+        APW_value = tk.Entry(window_mode_aai, textvariable = AAI_APW, font=('Arial',12))
         APW_value.place(x=230,y=265)
         tk.Label(window_mode_aai, text='Atrial Pulse Width(Float): ').place(x=30,y=265)
+        update_dict('AAI_APW',AAI_APW1)
 
-        ARP = tk.DoubleVar()
-        ARP_value = tk.Entry(window_mode_aai, textvariable = ARP, font=('Arial',12))
+        AAI_ARP1 = AAI_ARP.get()
+        ARP_value = tk.Entry(window_mode_aai, textvariable = AAI_ARP, font=('Arial',12))
         ARP_value.place(x=230,y=295)
         tk.Label(window_mode_aai, text='Atrial Refractory Period(Float): ').place(x=30,y=295)
+        update_dict('AAI_ARP',AAI_ARP1)
 
     '''VVI'''
     def Mode_VVI():
@@ -468,31 +622,35 @@ def Mode_selection():
         window_mode_vvi.geometry('500x500')
         window_mode_vvi.title('VVI is selected!')
 
-        LRL = tk.IntVar()
-        LRL_value = tk.Entry(window_mode_vvi, textvariable = LRL, font=('Arial',12))
+        VVI_LRL1 = VVI_LRL.get()
+        LRL_value = tk.Entry(window_mode_vvi, textvariable = VVI_LRL, font=('Arial',12))
         LRL_value.place(x=230,y=175)
         tk.Label(window_mode_vvi, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        update_dict('VVI_LRL',VVI_LRL1)
 
-        URL = tk.IntVar()
-        URL_value = tk.Entry(window_mode_vvi, textvariable = URL, font=('Arial',12))
+        VVI_URL1 = VVI_URL.get()
+        URL_value = tk.Entry(window_mode_vvi, textvariable = VVI_URL, font=('Arial',12))
         URL_value.place(x=230,y=205)
         tk.Label(window_mode_vvi, text='Upper Rate Limit(Int): ').place(x=30,y=205)
-            
-        VA = tk.DoubleVar()
-        VA_value = tk.Entry(window_mode_vvi, textvariable = VA, font=('Arial',12))
+        update_dict('VVI_URL',VVI_URL1)
+
+        VVI_VA1 = VVI_VA.get()
+        VA_value = tk.Entry(window_mode_vvi, textvariable = VVI_VA, font=('Arial',12))
         VA_value.place(x=230,y=235)
         tk.Label(window_mode_vvi, text='Ventricular Amplitude(Float): ').place(x=30,y=235)
+        update_dict('VVI_VA',VVI_VA1)
 
-        VPW = tk.DoubleVar()
-        VPW_value = tk.Entry(window_mode_vvi, textvariable = VPW, font=('Arial',12))
+        VVI_VPW1 = VVI_VPW.get()
+        VPW_value = tk.Entry(window_mode_vvi, textvariable = VVI_VPW, font=('Arial',12))
         VPW_value.place(x=230,y=265)
         tk.Label(window_mode_vvi, text='Ventricular Pulse Width(Float): ').place(x=30,y=265)
+        update_dict('VVI_VPW',VVI_VPW1)
 
-        VRP = tk.DoubleVar()
-        VRP_value = tk.Entry(window_mode_vvi, textvariable = VRP, font=('Arial',12))
+        VVI_VRP1 = VVI_VRP.get()
+        VRP_value = tk.Entry(window_mode_vvi, textvariable = VVI_VRP, font=('Arial',12))
         VRP_value.place(x=230,y=295)
         tk.Label(window_mode_vvi, text='Ventricular Refractory Period(Float): ').place(x=30,y=295)
-
+        update_dict('VVI_VRP',VVI_VRP1)
 
     AOO_Bu = tk.Button(window_mode_selection, text='AOO_Bu', command=Mode_AOO)
     AOO_Bu.place(x=120,y=240)
@@ -505,6 +663,8 @@ def Mode_selection():
 
     VVI_Bu = tk.Button(window_mode_selection, text='VVI_Bu',command=Mode_VVI)
     VVI_Bu.place(x=360,y=240)
+
+    
 
 
 
@@ -544,6 +704,72 @@ def usr_login():
         if is_sign_up:
             usr_sign_up()
 
+
+
+
+
+
+''''''
+
+def register_deviceID():
+
+    def save_deviceID():
+
+        try:
+            with open('devices_info.txt','r') as device_file:
+                device_info = json.load(device_file)
+
+        except FileNotFoundError:
+            with open('devices_info.txt','w') as device_file:
+                device_info = {'DeviceID':'anyid'}
+                json.dump(device_info, device_file)
+                device_file.close()
+
+        idd = banzai.get()
+
+        with open('devices_info.txt','r')as device_file:
+            device_info = json.load(device_file)
+
+        if idd in device_info.values():
+            tkinter.messagebox.showerror('Error','The device has already registered!')
+
+        else:
+            # print('time to select')
+            # if update_usr():
+            #     tkinter.messagebox.showinfo(title='Sign Up Failed!',message='You have reached the maximum number of users')
+            #     with open('test_data.txt','r'):
+            #         print(data_dict['UsrNumbers'])
+            #     btn_return = tk.Button(window, text='back to main page', command = window_sign_up.destroy())
+            #     btn_return.place(x=130,y=200)
+
+            # else:
+    
+            device_info['DeviceID'] = idd
+            with open('devices_info.txt','w') as device_file:
+                json.dump(device_info, device_file)
+                
+            tkinter.messagebox.showinfo('Welcome','You have successfully saved your device!')
+
+            window_save_device.destroy()
+
+
+    window_save_device = tk.Toplevel(window)
+    window_save_device.geometry('300x150')
+    window_save_device.title('Register your device')
+        
+    btn_save_device = tk.Button(window_save_device, text='Save Device',command=save_deviceID)
+    btn_save_device.place(x=10,y=100)
+
+    banzai = tk.StringVar()
+    tk.Label(window_save_device, text='enter the ID in string form').place(x=10,y=30)
+    banzai_entry = tk.Entry(window_save_device, textvariable=banzai)
+    banzai_entry.place(x=10, y = 60)
+
+''''''
+
+
+
+
 # define usr registration function
 def usr_sign_up():
     def sign_to_pacemaker_MonitorCenter():
@@ -559,8 +785,18 @@ def usr_sign_up():
         
         elif nn in exist_usr_info:
             tkinter.messagebox.showerror('Error','The user has already signed up!')
-        
+
         else:
+            # print('time to select')
+            # if update_usr():
+            #     tkinter.messagebox.showinfo(title='Sign Up Failed!',message='You have reached the maximum number of users')
+            #     with open('test_data.txt','r'):
+            #         print(data_dict['UsrNumbers'])
+            #     btn_return = tk.Button(window, text='back to main page', command = window_sign_up.destroy())
+            #     btn_return.place(x=130,y=200)
+
+            # else:
+    
             exist_usr_info[nn] = np
             with open('usrs_info.pickle','wb') as usr_file:
                 pickle.dump(exist_usr_info, usr_file)
@@ -597,6 +833,8 @@ btn_login = tk.Button(window, text='Login', command=usr_login)
 btn_login.place(x=120,y=240)
 btn_sign_up = tk.Button(window, text='Sign up',command=usr_sign_up)
 btn_sign_up.place(x=200,y=240)
+btn_sign_up = tk.Button(window, text='Register Device',command=register_deviceID)
+btn_sign_up.place(x=280,y=240)
 
 window.mainloop()
 

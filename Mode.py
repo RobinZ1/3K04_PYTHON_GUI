@@ -1,0 +1,330 @@
+import tkinter as tk
+import tkinter.messagebox
+import pickle
+import json
+
+
+
+global AOO_LRL1
+AOO_LRL1 = -1
+AOO_LRL = tk.IntVar()
+
+global AOO_URL1
+AOO_URL1 = -1
+AOO_URL = tk.IntVar()
+
+global AOO_AA1
+AOO_AA1 = -1
+AOO_AA = tk.DoubleVar()
+
+global AOO_APW1
+AOO_APW1 = -1
+AOO_APW = tk.DoubleVar()
+
+#VOO
+global VOO_LRL1
+VOO_LRL1 = -1
+VOO_LRL = tk.IntVar()
+
+global VOO_URL1
+VOO_URL1 = -1
+VOO_URL = tk.IntVar()
+
+global VOO_VA1
+VOO_VA1 = -1
+VOO_VA = tk.DoubleVar()
+
+global VOO_VPW1
+VOO_VPW1 = -1
+VOO_VPW = tk.DoubleVar()
+
+#VVI
+global VVI_LRL1
+VVI_LRL1 = -1
+VVI_LRL = tk.IntVar()
+
+global VVI_URL1
+VVI_URL1 = -1
+VVI_URL = tk.IntVar()
+
+global VVI_VA1
+VVI_VA1 = -1
+VVI_VA = tk.DoubleVar()
+
+global VVI_VPW1
+VVI_VPW1 = -1
+VVI_VPW = tk.DoubleVar()
+
+global VVI_VRP1
+VVI_VRP1 = -1
+VVI_VRP = tk.DoubleVar()
+
+#AAI
+global AAI_LRL1
+AAI_LRL1 = -1
+AAI_LRL = tk.IntVar()
+
+global AAI_URL1
+AAI_URL1 = -1
+AAI_URL = tk.IntVar()
+
+global AAI_AA1
+AAI_AA1 = -1
+AAI_AA = tk.DoubleVar()
+
+global AAI_APW1
+AAI_APW1 = -1
+AAI_APW = tk.DoubleVar()
+
+global AAI_ARP1
+AAI_ARP1 = -1
+AAI_ARP = tk.DoubleVar()
+
+global data_dict
+
+global usrLimit
+def update_dict(string, value):
+    string = string
+    value = value
+    with open('test_data.txt', 'r') as json_file:
+        data_dict = json.load(json_file)
+        print("updated\n")
+        print(data_dict)
+        data_dict[string] = value
+        print(data_dict)
+    with open('test_data.txt', 'w') as json_file:
+        json.dump(data_dict, json_file)
+        json_file.close()
+
+def ini_file():
+    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1}
+    with open('test_data.txt','w') as json_file:
+        json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
+
+
+def Button(window,var_connect):
+       
+    window_mode_selection = tk.Toplevel(window)
+    window_mode_selection.geometry('600x500')
+    window_mode_selection.title('Mode Selection')
+
+    print(var_connect[1])
+    if var_connect[1] == 1:
+        tk.Label(window_mode_selection, text='Device is connecting',font=('Arial',12)).place(x=200,y=100)
+    else :
+        tk.Label(window_mode_selection, text='Device is disconnecting',font=('Arial',12)).place(x=200,y=100)
+
+
+    def M_VVI():
+        window_mode_vvi = tk.Toplevel(window)
+        window_mode_vvi.geometry('500x500')
+        window_mode_vvi.title('VVI is selected!')
+        VVI_LRL1 = VVI_LRL.get()
+        LRL_value = tk.Entry(window_mode_vvi, textvariable = VVI_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=175)
+        tk.Label(window_mode_vvi, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        update_dict('VVI_LRL',VVI_LRL1)
+
+        VVI_URL1 = VVI_URL.get()
+        URL_value = tk.Entry(window_mode_vvi, textvariable = VVI_URL, font=('Arial',12))
+        URL_value.place(x=230,y=205)
+        tk.Label(window_mode_vvi, text='Upper Rate Limit(Int): ').place(x=30,y=205)
+        update_dict('VVI_URL',VVI_URL1)
+
+        VVI_VA1 = VVI_VA.get()
+        VA_value = tk.Entry(window_mode_vvi, textvariable = VVI_VA, font=('Arial',12))
+        VA_value.place(x=230,y=235)
+        tk.Label(window_mode_vvi, text='Ventricular Amplitude(Float): ').place(x=30,y=235)
+        update_dict('VVI_VA',VVI_VA1)
+
+        VVI_VPW1 = VVI_VPW.get()
+        VPW_value = tk.Entry(window_mode_vvi, textvariable = VVI_VPW, font=('Arial',12))
+        VPW_value.place(x=230,y=265)
+        tk.Label(window_mode_vvi, text='Ventricular Pulse Width(Float): ').place(x=30,y=265)
+        update_dict('VVI_VPW',VVI_VPW1)
+
+        VVI_VRP1 = VVI_VRP.get()
+        VRP_value = tk.Entry(window_mode_vvi, textvariable = VVI_VRP, font=('Arial',12))
+        VRP_value.place(x=230,y=295)
+        tk.Label(window_mode_vvi, text='Ventricular Refractory Period(Float): ').place(x=30,y=295)
+        update_dict('VVI_VRP',VVI_VRP1)
+
+        VVI_Com = tk.Button(window_mode_vvi, text='VVI_COMPARE', command=M_VVI)
+        VVI_Com.place(x=50,y=350)
+        if VVI_LRL1 == 0:
+            print('1')
+        else :
+            if VVI_LRL1<30 or VVI_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL out of range!')
+            elif VVI_URL1<50 or VVI_URL1>175:
+                tkinter.messagebox.showerror('Error','URL out of range!')
+            elif VVI_VA1<3.5 or VVI_VA1>7:
+                tkinter.messagebox.showerror('Error','VA out of range!')
+            elif VVI_VPW1<1 or VVI_VPW1>10:
+                tkinter.messagebox.showerror('Error','VPW out of range!')
+            elif VVI_VRP1<150 or VVI_VRP1>500:
+                tkinter.messagebox.showerror('Error','VRP out of range!')
+
+
+
+    def M_AAI():
+        window_mode_aai = tk.Toplevel(window)
+        window_mode_aai.geometry('500x500')
+        window_mode_aai.title('AAI is selected!')
+
+        AAI_LRL1 = AAI_LRL.get()
+        LRL_value = tk.Entry(window_mode_aai, textvariable = AAI_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=175)
+        tk.Label(window_mode_aai, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        update_dict('AAI_LRL',AAI_LRL1)
+
+        AAI_URL1 = AAI_URL.get()
+        URL_value = tk.Entry(window_mode_aai, textvariable = AAI_URL, font=('Arial',12))
+        URL_value.place(x=230,y=205)
+        tk.Label(window_mode_aai, text='Upper Rate Limit(Int): ').place(x=30,y=205)
+        update_dict('AAI_URL',AAI_URL1)
+
+        AAI_AA1 = AAI_AA.get()
+        AA_value = tk.Entry(window_mode_aai, textvariable = AAI_AA, font=('Arial',12))
+        AA_value.place(x=230,y=235)
+        tk.Label(window_mode_aai, text='Atrial Amplitude(Float): ').place(x=30,y=235)
+        update_dict('AAI_AA',AAI_AA1)
+
+        AAI_APW1 = AAI_APW.get()
+        APW_value = tk.Entry(window_mode_aai, textvariable = AAI_APW, font=('Arial',12))
+        APW_value.place(x=230,y=265)
+        tk.Label(window_mode_aai, text='Atrial Pulse Width(Float): ').place(x=30,y=265)
+        update_dict('AAI_APW',AAI_APW1)
+
+        AAI_ARP1 = AAI_ARP.get()
+        ARP_value = tk.Entry(window_mode_aai, textvariable = AAI_ARP, font=('Arial',12))
+        ARP_value.place(x=230,y=295)
+        tk.Label(window_mode_aai, text='Atrial Refractory Period(Float): ').place(x=30,y=295)
+        update_dict('AAI_ARP',AAI_ARP1)
+        AAI_Com = tk.Button(window_mode_aai, text='AAI_COMPARE', command=M_AAI)
+        AAI_Com.place(x=50,y=350)
+        if AAI_LRL1 == 0:
+            print('1')
+        else :
+            if AAI_LRL1<30 or AAI_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL out of range!')
+            elif AAI_URL1<50 or AAI_URL1>175:
+                tkinter.messagebox.showerror('Error','URL out of range!')
+            elif AAI_AA1<3.5 or AAI_AA1>7:
+                tkinter.messagebox.showerror('Error','AA out of range!')
+            elif AAI_APW1<1 or AAI_APW1>10:
+                tkinter.messagebox.showerror('Error','APW out of range!')
+            elif AAI_ARP1<150 or AAI_ARP1>500:
+                tkinter.messagebox.showerror('Error','ARP out of range!')
+
+
+    def M_VOO():
+        window_mode_voo = tk.Toplevel(window)
+        window_mode_voo.geometry('500x500')
+        window_mode_voo.title('VOO is selected!')
+
+        VOO_LRL1 = VOO_LRL.get()
+        LRL_value = tk.Entry(window_mode_voo, textvariable = VOO_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=175)
+        tk.Label(window_mode_voo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        update_dict('VOO_LRL',VOO_LRL1)
+
+        VOO_URL1 = VOO_URL.get()
+        URL_value = tk.Entry(window_mode_voo, textvariable = VOO_URL, font=('Arial',12))
+        URL_value.place(x=230,y=205)
+        tk.Label(window_mode_voo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
+        update_dict('VOO_URL',VOO_URL1)
+
+        VOO_VA1 = VOO_VA.get()
+        VA_value = tk.Entry(window_mode_voo, textvariable = VOO_VA, font=('Arial',12))
+        VA_value.place(x=230,y=235)
+        tk.Label(window_mode_voo, text='Ventricular Amplitude(Float): ').place(x=30,y=235)
+        update_dict('VOO_VA',VOO_VA1)
+
+        VOO_VPW1 = VOO_VPW.get()
+        VPW_value = tk.Entry(window_mode_voo, textvariable = VOO_VPW, font=('Arial',12))
+        VPW_value.place(x=230,y=265)
+        tk.Label(window_mode_voo, text='Ventricular Pulse Width(Float): ').place(x=30,y=265)
+        update_dict('VOO_VPW',VOO_VPW1)
+        VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO)
+        VOO_Com.place(x=50,y=300)
+        if VOO_LRL1 == 0:
+            print('1')
+        else :
+            if VOO_LRL1<30 or VOO_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL out of range!')
+            elif VOO_URL1<50 or VOO_URL1>175:
+                tkinter.messagebox.showerror('Error','URL out of range!')
+            elif VOO_VA1<3.5 or VOO_VA1>7:
+                tkinter.messagebox.showerror('Error','VA out of range!')
+            elif VOO_VPW1<1 or VOO_VPW1>10:
+                tkinter.messagebox.showerror('Error','VPW out of range!')
+
+
+    def M_AOO():
+        window_mode_aoo = tk.Toplevel(window)
+        window_mode_aoo.geometry('500x500')
+        window_mode_aoo.title('AOO is selected!')
+        print('100')
+
+        AOO_LRL1 = AOO_LRL.get()
+        tk.Label(window_mode_aoo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        LRL_value = tk.Entry(window_mode_aoo, textvariable = AOO_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=175)
+
+        update_dict('AOO_LRL',AOO_LRL1)
+
+        
+        AOO_URL1 = AOO_URL.get()
+        tk.Label(window_mode_aoo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
+        URL_value = tk.Entry(window_mode_aoo, textvariable = AOO_URL, font=('Arial',12))
+        URL_value.place(x=230,y=205)
+
+        update_dict('AOO_URL',AOO_URL1)
+        
+        AOO_AA1 = AOO_AA.get()
+        tk.Label(window_mode_aoo, text='Atrial Amplitude(Float): ').place(x=30,y=235)
+        AA_value = tk.Entry(window_mode_aoo, textvariable = AOO_AA, font=('Arial',12))
+        AA_value.place(x=230,y=235)
+        
+        update_dict('AOO_AA',AOO_AA1)
+
+        AOO_APW1 = AOO_APW.get()
+        tk.Label(window_mode_aoo, text='Atrial Pulse Width(Float): ').place(x=30,y=265)
+        APW_value = tk.Entry(window_mode_aoo, textvariable = AOO_APW, font=('Arial',12))
+        APW_value.place(x=230,y=265)
+
+        update_dict('AOO_APW',AOO_APW1)
+        AOO_Com = tk.Button(window_mode_aoo, text='AOO_COMPARE', command=M_AOO)
+        AOO_Com.place(x=50,y=300)
+        if AOO_LRL1 == 0:
+           print('1')
+        else :
+            if AOO_LRL1<30 or AOO_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL out of range!')
+            elif AOO_URL1<50 or AOO_URL1>175:
+                tkinter.messagebox.showerror('Error','URL out of range!')
+            elif AOO_AA1<3.5 or AOO_AA1>7:
+                tkinter.messagebox.showerror('Error','AA out of range!')
+            elif AOO_APW1<1 or AOO_APW1>10:
+                tkinter.messagebox.showerror('Error','APW out of range!')
+
+
+    AOO_Bu = tk.Button(window_mode_selection, text='AOO_Bu', command= M_AOO )
+    AOO_Bu.place(x=120,y=240)
+    
+    
+    VOO_Bu = tk.Button(window_mode_selection, text='VOO_Bu',command= M_VOO )
+    VOO_Bu.place(x=200,y=240)
+    
+
+    AAI_Bu = tk.Button(window_mode_selection, text='AAI_Bu', command= M_AAI )
+    AAI_Bu.place(x=280,y=240)
+
+
+    VVI_Bu = tk.Button(window_mode_selection, text='VVI_Bu',command= M_VVI )
+    VVI_Bu.place(x=360,y=240)
+
+        
+            
+
