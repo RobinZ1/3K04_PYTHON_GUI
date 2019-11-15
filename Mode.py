@@ -275,6 +275,54 @@ global VVIR_VRP1
 VVIR_VRP1 = -1
 VVIR_VRP = tk.DoubleVar()
 
+global DOOR_LRL1
+DOOR_LRL1 = -1
+DOOR_LRL = tk.DoubleVar()
+
+global DOOR_URL1
+DOOR_URL1 = -1
+DOOR_URL = tk.DoubleVar()
+
+global DOOR_MSR
+DOOR_MSR1 = -1
+DOOR_MSR = tk.DoubleVar()
+
+global DOOR_VA1
+DOOR_VA1 = -1
+DOOR_VA = tk.DoubleVar()
+
+global DOOR_VPW1
+DOOR_VPW1 = -1
+DOOR_VPW = tk.DoubleVar()
+
+global DOOR_AT1
+DOOR_AT1 = -1
+DOOR_AT = tk.DoubleVar()
+
+global DOOR_ReaT1
+DOOR_ReaT1 = -1
+DOOR_ReaT = tk.DoubleVar()
+
+global DOOR_RF1
+DOOR_RF1 = -1
+DOOR_RF = tk.DoubleVar()
+
+global DOOR_RecT1
+DOOR_RecT1 = -1
+DOOR_RecT = tk.DoubleVar()
+
+global DOOR_FAVD1
+DOOR_FAVD1 = -1
+DOOR_FAVD = tk.DoubleVar()
+
+global DOOR_AA1
+DOOR_AA1 = -1
+DOOR_AA = tk.DoubleVar()
+
+global DOOR_APW1
+DOOR_APW1 = -1
+DOOR_APW = tk.DoubleVar()
+
 def update_dict(string, value):
     string = string
     value = value
@@ -289,7 +337,7 @@ def update_dict(string, value):
         json_file.close()
 
 def ini_file():
-    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1}
+    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1,'DOOR_LRL':DOOR_LRL1,'DOOR_URL':DOOR_URL1,'DOOR_MSR':DOOR_MSR1,'DOOR_VA':DOOR_VA1,'DOOR_VPW':DOOR_VPW1,'DOOR_AT':DOOR_AT1,'DOOR_ReaT':DOOR_ReaT1,'DOOR_RF':DOOR_RF1,'DOOR_RedT':DOOR_RecT1,'DOOR_FAVD':DOOR_FAVD1,'DOOR_AA':DOOR_AA1, 'DOOR_APW':DOOR_APW1}
     with open('test_data.txt','w') as json_file:
         json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
 
@@ -837,6 +885,82 @@ def Button(window,var_connect):
         
         
 
+    def M_DOOR():
+        window_mode_DOOR = tk.Toplevel(window)
+        window_mode_DOOR.geometry('500x550')
+        window_mode_DOOR.title('DOOR is selected!')
+
+        DOOR_LRL1 = DOOR_LRL.get()
+        LRL_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=150)
+        tk.Label(window_mode_DOOR, text='Lower Rate Limit(Float): ').place(x=30,y=150)
+        update_dict('DOOR_LRL',DOOR_LRL1)
+
+        DOOR_URL1 = DOOR_URL.get()
+        URL_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_URL, font=('Arial',12))
+        URL_value.place(x=230,y=180)
+        tk.Label(window_mode_DOOR, text='Upper Rate Limit(Float): ').place(x=30,y=180)
+        update_dict('DOOR_URL',DOOR_URL1)
+
+        DOOR_MSR1 = DOOR_MSR.get()
+        MSR_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_MSR, font=('Arial',12))
+        MSR_value.place(x=230,y=210)
+        tk.Label(window_mode_DOOR, text='Maximum Sensor Rate(Float): ').place(x=30,y=210)
+        update_dict('DOOR_MSR',DOOR_MSR1)
+
+        DOOR_VA1 = DOOR_VA.get()
+        VA_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_VA, font=('Arial',12))
+        VA_value.place(x=230,y=240)
+        tk.Label(window_mode_DOOR, text='Ventricular Amplitude(Float): ').place(x=30,y=240)
+        update_dict('DOOR_VA',DOOR_VA1)
+
+        DOOR_VPW1 = DOOR_VPW.get()
+        VPW_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_VPW, font=('Arial',12))
+        VPW_value.place(x=230,y=270)
+        tk.Label(window_mode_DOOR, text='Ventricular Pulse Width (Float): ').place(x=30,y=270)
+        update_dict('DOOR_VPW',DOOR_VPW1)
+
+        DOOR_AT1 = DOOR_AT.get()
+        AT_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_AT, font=('Arial',12))
+        AT_value.place(x=230,y=300)
+        tk.Label(window_mode_DOOR, text='Activity Threshold(Float): ').place(x=30,y=300)
+        update_dict('DOOR_AT',DOOR_AT1)
+
+        DOOR_ReaT1 = DOOR_ReaT.get()
+        ReaT_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_ReaT, font=('Arial',12))
+        ReaT_value.place(x=230,y=330)
+        tk.Label(window_mode_DOOR, text='Reaction Time(Float): ').place(x=30,y=330)
+        update_dict('DOOR_ReaT',DOOR_ReaT1)
+
+        DOOR_RF1 = DOOR_RF.get()
+        RF_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_RF, font=('Arial',12))
+        RF_value.place(x=230,y=360)
+        tk.Label(window_mode_DOOR, text='Response Factor(Float): ').place(x=30,y=360)
+        update_dict('DOOR_RF',DOOR_RF1)
+
+        DOOR_RecT1 = DOOR_RecT.get()
+        RecT_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_RecT, font=('Arial',12))
+        RecT_value.place(x=230,y=390)
+        tk.Label(window_mode_DOOR, text='Recovery Time(Float): ').place(x=30,y=390)
+        update_dict('DOOR_RecT',DOOR_RecT1)
+
+        DOOR_FAVD1 = DOOR_FAVD.get()
+        FAVD_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_FAVD, font=('Arial',12))
+        FAVD_value.place(x=230,y=420)
+        tk.Label(window_mode_DOOR, text='Fixed AV Delay (Float): ').place(x=30,y=420)
+        update_dict('DOOR_FAVD',DOOR_FAVD1)
+
+        DOOR_AA1 = DOOR_AA.get()
+        AA_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_AA, font=('Arial',12))
+        AA_value.place(x=230,y=450)
+        tk.Label(window_mode_DOOR, text='Atrial Amplitude(Float): ').place(x=30,y=450)
+        update_dict('DOOR_AA',DOOR_AA1)
+
+        DOOR_APW1 = DOOR_APW.get()
+        APW_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_APW, font=('Arial',12))
+        APW_value.place(x=230,y=480)
+        tk.Label(window_mode_DOOR, text='Atrial Pulse Width(Float): ').place(x=30,y=480)
+        update_dict('DOOR_APW',DOOR_APW1)
 
 
 
@@ -887,5 +1011,7 @@ def Button(window,var_connect):
     VVIR_Bu = tk.Button(window_mode_selection, text='VVIR_Bu',command= M_VVIR )
     VVIR_Bu.place(x=360,y=280)
 
+    DOOR_Bu = tk.Button(window_mode_selection, text='DOOR_Bu',command= M_DOOR )
+    DOOR_Bu.place(x=440,y=280)
 
 
