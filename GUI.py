@@ -290,3 +290,9 @@ btn_sign_up = tk.Button(window, text='Register Device',command=myButton.register
 btn_sign_up.place(x=280,y=240)
 
 window.mainloop()
+
+
+
+
+
+fuckpu
