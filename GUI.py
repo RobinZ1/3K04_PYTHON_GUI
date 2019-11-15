@@ -35,83 +35,9 @@ entry_usr_pwd.place(x=120,y=215)
 var_connect = [5,6]
 
 data = ini_file();
-#Mode Selection Function
-#AOO
-global AOO_LRL1
-AOO_LRL1 = -1
-AOO_LRL = tk.IntVar();
 
-global AOO_URL1
-AOO_URL1 = -1
-AOO_URL = tk.IntVar()
 
-global AOO_AA1
-AOO_AA1 = -1
-AOO_AA = tk.DoubleVar()
-
-global AOO_APW1
-AOO_APW1 = -1
-AOO_APW = tk.DoubleVar()
-
-#VOO
-global VOO_LRL1
-VOO_LRL1 = -1
-VOO_LRL = tk.IntVar();
-
-global VOO_URL1
-VOO_URL1 = -1
-VOO_URL = tk.IntVar()
-
-global VOO_VA1
-VOO_VA1 = -1
-VOO_VA = tk.DoubleVar()
-
-global VOO_VPW1
-VOO_VPW1 = -1
-VOO_VPW = tk.DoubleVar()
-
-#VVI
-global VVI_LRL1
-VVI_LRL1 = -1
-VVI_LRL = tk.IntVar();
-
-global VVI_URL1
-VVI_URL1 = -1
-VVI_URL = tk.IntVar()
-
-global VVI_VA1
-VVI_VA1 = -1
-VVI_VA = tk.DoubleVar()
-
-global VVI_VPW1
-VVI_VPW1 = -1
-VVI_VPW = tk.DoubleVar()
-
-global VVI_VRP1
-VVI_VRP1 = -1
-VVI_VRP = tk.DoubleVar()
-
-#AAI
-global AAI_LRL1
-AAI_LRL1 = -1
-AAI_LRL = tk.IntVar();
-
-global AAI_URL1
-AAI_URL1 = -1
-AAI_URL = tk.IntVar()
-
-global AAI_AA1
-AAI_AA1 = -1
-AAI_AA = tk.DoubleVar()
-
-global AAI_APW1
-AAI_APW1 = -1
-AAI_APW = tk.DoubleVar()
-
-global AAI_ARP1
-AAI_ARP1 = -1
-AAI_ARP = tk.DoubleVar()
-
+#Initializing the data_dict (IMPORTANT) AND USER LIMITS
 global data_dict
 
 global usrLimit

@@ -195,12 +195,85 @@ AAIR_PVARP1 = -1
 AAIR_PVARP = tk.DoubleVar()
 
 
+global VOOR_LRL1
+VOOR_LRL1 = -1
+VOOR_LRL = tk.DoubleVar()
 
+global VOOR_URL1
+VOOR_URL1 = -1
+VOOR_URL = tk.DoubleVar()
 
+global VOOR_MSR
+VOOR_MSR1 = -1
+VOOR_MSR = tk.DoubleVar()
 
-global data_dict
+global VOOR_VA1
+VOOR_VA1 = -1
+VOOR_VA = tk.DoubleVar()
 
-global usrLimit
+global VOOR_VPW1
+VOOR_VPW1 = -1
+VOOR_VPW = tk.DoubleVar()
+
+global VOOR_AT1
+VOOR_AT1 = -1
+VOOR_AT = tk.DoubleVar()
+
+global VOOR_ReaT1
+VOOR_ReaT1 = -1
+VOOR_ReaT = tk.DoubleVar()
+
+global VOOR_RF1
+VOOR_RF1 = -1
+VOOR_RF = tk.DoubleVar()
+
+global VOOR_RecT1
+VOOR_RecT1 = -1
+VOOR_RecT = tk.DoubleVar()
+
+global VVIR_LRL1
+VVIR_LRL1 = -1
+VVIR_LRL = tk.DoubleVar()
+
+global VVIR_URL1
+VVIR_URL1 = -1
+VVIR_URL = tk.DoubleVar()
+
+global VVIR_MSR
+VVIR_MSR1 = -1
+VVIR_MSR = tk.DoubleVar()
+
+global VVIR_VA1
+VVIR_VA1 = -1
+VVIR_VA = tk.DoubleVar()
+
+global VVIR_VPW1
+VVIR_VPW1 = -1
+VVIR_VPW = tk.DoubleVar()
+
+global VVIR_AT1
+VVIR_AT1 = -1
+VVIR_AT = tk.DoubleVar()
+
+global VVIR_ReaT1
+VVIR_ReaT1 = -1
+VVIR_ReaT = tk.DoubleVar()
+
+global VVIR_RF1
+VVIR_RF1 = -1
+VVIR_RF = tk.DoubleVar()
+
+global VVIR_RecT1
+VVIR_RecT1 = -1
+VVIR_RecT = tk.DoubleVar()
+
+global VVIR_VS1
+VVIR_VS1 = -1
+VVIR_VS = tk.DoubleVar()
+
+global VVIR_VRP1
+VVIR_VRP1 = -1
+VVIR_VRP = tk.DoubleVar()
 
 def update_dict(string, value):
     string = string
@@ -216,7 +289,7 @@ def update_dict(string, value):
         json_file.close()
 
 def ini_file():
-    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1}
+    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1}
     with open('test_data.txt','w') as json_file:
         json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
 
@@ -629,10 +702,138 @@ def Button(window,var_connect):
         
 
 
+        #VOOR
 
-   
+    def M_VOOR():
+        window_mode_VOOR = tk.Toplevel(window)
+        window_mode_VOOR.geometry('500x500')
+        window_mode_VOOR.title('VOOR is selected!')
+
+        VOOR_LRL1 = VOOR_LRL.get()
+        LRL_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=150)
+        tk.Label(window_mode_VOOR, text='Lower Rate Limit(Float): ').place(x=30,y=150)
+        update_dict('VOOR_LRL',VOOR_LRL1)
+
+        VOOR_URL1 = VOOR_URL.get()
+        URL_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_URL, font=('Arial',12))
+        URL_value.place(x=230,y=180)
+        tk.Label(window_mode_VOOR, text='Upper Rate Limit(Float): ').place(x=30,y=180)
+        update_dict('VOOR_URL',VOOR_URL1)
+
+        VOOR_MSR1 = VOOR_MSR.get()
+        MSR_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_MSR, font=('Arial',12))
+        MSR_value.place(x=230,y=210)
+        tk.Label(window_mode_VOOR, text='Maximum Sensor Rate(Float): ').place(x=30,y=210)
+        update_dict('VOOR_MSR',VOOR_MSR1)
+
+        VOOR_VA1 = VOOR_VA.get()
+        VA_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_VA, font=('Arial',12))
+        VA_value.place(x=230,y=240)
+        tk.Label(window_mode_VOOR, text='Ventricular Amplitude(Float): ').place(x=30,y=240)
+        update_dict('VOOR_VA',VOOR_VA1)
+
+        VOOR_VPW1 = VOOR_VPW.get()
+        VPW_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_VPW, font=('Arial',12))
+        VPW_value.place(x=230,y=270)
+        tk.Label(window_mode_VOOR, text='Ventricular Pulse Width (Float): ').place(x=30,y=270)
+        update_dict('VOOR_VPW',VOOR_VPW1)
+
+        VOOR_AT1 = VOOR_AT.get()
+        AT_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_AT, font=('Arial',12))
+        AT_value.place(x=230,y=300)
+        tk.Label(window_mode_VOOR, text='Activity Threshold(Float): ').place(x=30,y=300)
+        update_dict('VOOR_AT',VOOR_AT1)
+
+        VOOR_ReaT1 = VOOR_ReaT.get()
+        ReaT_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_ReaT, font=('Arial',12))
+        ReaT_value.place(x=230,y=330)
+        tk.Label(window_mode_VOOR, text='Reaction Time(Float): ').place(x=30,y=330)
+        update_dict('VOOR_ReaT',VOOR_ReaT1)
+
+        VOOR_RF1 = VOOR_RF.get()
+        RF_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_RF, font=('Arial',12))
+        RF_value.place(x=230,y=360)
+        tk.Label(window_mode_VOOR, text='Response Factor(Float): ').place(x=30,y=360)
+        update_dict('VOOR_RF',VOOR_RF1)
+
+        VOOR_RecT1 = VOOR_RecT.get()
+        RecT_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_RecT, font=('Arial',12))
+        RecT_value.place(x=230,y=390)
+        tk.Label(window_mode_VOOR, text='Recovery Time(Float): ').place(x=30,y=390)
+        update_dict('VOOR_RecT',VOOR_RecT1)
 
 
+    def M_VVIR():
+        window_mode_VVIR = tk.Toplevel(window)
+        window_mode_VVIR.geometry('500x500')
+        window_mode_VVIR.title('VVIR is selected!')
+
+        VVIR_LRL1 = VVIR_LRL.get()
+        LRL_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=150)
+        tk.Label(window_mode_VVIR, text='Lower Rate Limit(Float): ').place(x=30,y=150)
+        update_dict('VVIR_LRL',VVIR_LRL1)
+
+        VVIR_URL1 = VVIR_URL.get()
+        URL_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_URL, font=('Arial',12))
+        URL_value.place(x=230,y=180)
+        tk.Label(window_mode_VVIR, text='Upper Rate Limit(Float): ').place(x=30,y=180)
+        update_dict('VVIR_URL',VVIR_URL1)
+
+        VVIR_MSR1 = VVIR_MSR.get()
+        MSR_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_MSR, font=('Arial',12))
+        MSR_value.place(x=230,y=210)
+        tk.Label(window_mode_VVIR, text='Maximum Sensor Rate(Float): ').place(x=30,y=210)
+        update_dict('VVIR_MSR',VVIR_MSR1)
+
+        VVIR_VA1 = VVIR_VA.get()
+        VA_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VA, font=('Arial',12))
+        VA_value.place(x=230,y=240)
+        tk.Label(window_mode_VVIR, text='Ventricular Amplitude(Float): ').place(x=30,y=240)
+        update_dict('VVIR_VA',VVIR_VA1)
+
+        VVIR_VPW1 = VVIR_VPW.get()
+        VPW_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VPW, font=('Arial',12))
+        VPW_value.place(x=230,y=270)
+        tk.Label(window_mode_VVIR, text='Ventricular Pulse Width (Float): ').place(x=30,y=270)
+        update_dict('VVIR_VPW',VVIR_VPW1)
+
+        VVIR_AT1 = VVIR_AT.get()
+        AT_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_AT, font=('Arial',12))
+        AT_value.place(x=230,y=300)
+        tk.Label(window_mode_VVIR, text='Activity Threshold(Float): ').place(x=30,y=300)
+        update_dict('VVIR_AT',VVIR_AT1)
+
+        VVIR_ReaT1 = VVIR_ReaT.get()
+        ReaT_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_ReaT, font=('Arial',12))
+        ReaT_value.place(x=230,y=330)
+        tk.Label(window_mode_VVIR, text='Reaction Time(Float): ').place(x=30,y=330)
+        update_dict('VVIR_ReaT',VVIR_ReaT1)
+
+        VVIR_RF1 = VVIR_RF.get()
+        RF_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_RF, font=('Arial',12))
+        RF_value.place(x=230,y=360)
+        tk.Label(window_mode_VVIR, text='Response Factor(Float): ').place(x=30,y=360)
+        update_dict('VVIR_RF',VVIR_RF1)
+
+        VVIR_RecT1 = VVIR_RecT.get()
+        RecT_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_RecT, font=('Arial',12))
+        RecT_value.place(x=230,y=390)
+        tk.Label(window_mode_VVIR, text='Recovery Time(Float): ').place(x=30,y=390)
+        update_dict('VVIR_RecT',VVIR_RecT1)
+
+        VVIR_VS1 = VVIR_VS.get()
+        VS_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VS, font=('Arial',12))
+        VS_value.place(x=230,y=420)
+        tk.Label(window_mode_VVIR, text='Ventricular Sensitivity(Float): ').place(x=30,y=420)
+        update_dict('VVIR_VS',VVIR_VS1)
+
+        VVIR_VRP1 = VVIR_VRP.get()
+        VRP_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VRP, font=('Arial',12))
+        VRP_value.place(x=230,y=450)
+        tk.Label(window_mode_VVIR, text='Ventricular Refractory Period(Float): ').place(x=30,y=450)
+        update_dict('VVIR_VRP',VVIR_VRP1)
         
         
 
@@ -672,13 +873,19 @@ def Button(window,var_connect):
     VVI_Bu.place(x=360,y=240)
 
     DOO_Bu = tk.Button(window_mode_selection, text='DOO_Bu',command= M_DOO )
-    DOO_Bu.place(x=120,y=280)
+    DOO_Bu.place(x=440,y=240)
 
     AOOR_Bu = tk.Button(window_mode_selection, text='AOOR_Bu',command= M_AOOR )
-    AOOR_Bu.place(x=200,y=280)
+    AOOR_Bu.place(x=120,y=280)
 
     AAIR_Bu = tk.Button(window_mode_selection, text='AAIR_Bu',command= M_AAIR )
-    AAIR_Bu.place(x=280,y=280)
+    AAIR_Bu.place(x=200,y=280)
         
+    VOOR_Bu = tk.Button(window_mode_selection, text='VOOR_Bu',command= M_VOOR )
+    VOOR_Bu.place(x=280,y=280)
             
+    VVIR_Bu = tk.Button(window_mode_selection, text='VVIR_Bu',command= M_VVIR )
+    VVIR_Bu.place(x=360,y=280)
+
+
 
