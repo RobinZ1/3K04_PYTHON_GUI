@@ -291,8 +291,3 @@ btn_sign_up.place(x=280,y=240)
 
 window.mainloop()
 
-
-
-
-
-fuckpu

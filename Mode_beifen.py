@@ -398,9 +398,6 @@ DOO_VPW = tk.IntVar()
         VPW_value.place(x=230,y=355)
 
         update_dict('DOO_VPW',DOO_VPW1)
-
-
-        
         
 
 
