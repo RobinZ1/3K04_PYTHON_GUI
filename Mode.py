@@ -146,6 +146,56 @@ global DOO_VPW1
 DOO_VPW1 = -1
 DOO_VPW = tk.IntVar()
 
+global AAIR_LRL1
+AAIR_LRL1 = -1
+AAIR_LRL = tk.DoubleVar()
+
+global AAIR_URL1
+AAIR_URL1 = -1
+AAIR_URL = tk.DoubleVar()
+
+global AAIR_MSR
+AAIR_MSR1 = -1
+AAIR_MSR = tk.DoubleVar()
+
+global AAIR_AA1
+AAIR_AA1 = -1
+AAIR_AA = tk.DoubleVar()
+
+global AAIR_APW1
+AAIR_APW1 = -1
+AAIR_APW = tk.DoubleVar()
+
+global AAIR_AT1
+AAIR_AT1 = -1
+AAIR_AT = tk.DoubleVar()
+
+global AAIR_ReaT1
+AAIR_ReaT1 = -1
+AAIR_ReaT = tk.DoubleVar()
+
+global AAIR_RF1
+AAIR_RF1 = -1
+AAIR_RF = tk.DoubleVar()
+
+global AAIR_RecT1
+AAIR_RecT1 = -1
+AAIR_RecT = tk.DoubleVar()
+
+global AAIR_AS1
+AAIR_AS1 = -1
+AAIR_AS = tk.DoubleVar()
+
+global AAIR_ARP1
+AAIR_ARP1 = -1
+AAIR_ARP = tk.DoubleVar()
+
+global AAIR_PVARP1
+AAIR_PVARP1 = -1
+AAIR_PVARP = tk.DoubleVar()
+
+
+
 
 
 global data_dict
@@ -166,7 +216,7 @@ def update_dict(string, value):
         json_file.close()
 
 def ini_file():
-    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1}
+    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1}
     with open('test_data.txt','w') as json_file:
         json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
 
@@ -378,6 +428,63 @@ def Button(window,var_connect):
                 tkinter.messagebox.showerror('Error','APW out of range!')
     
 
+    def M_DOO():
+        window_mode_doo = tk.Toplevel(window)
+        window_mode_doo.geometry('500x500')
+        window_mode_doo.title('DOO is selected!')
+        print('100')
+
+        DOO_LRL1 = DOO_LRL.get()
+        tk.Label(window_mode_doo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        LRL_value = tk.Entry(window_mode_doo, textvariable = DOO_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=175)
+
+        update_dict('DOD_LRL',DOO_LRL1)
+
+    
+        DOO_URL1 = DOO_URL.get()
+        tk.Label(window_mode_doo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
+        URL_value = tk.Entry(window_mode_doo, textvariable = DOO_URL, font=('Arial',12))
+        URL_value.place(x=230,y=205)
+
+        update_dict('DOO_URL',DOO_URL1)
+        
+        DOO_FAVD1 = DOO_FAVD.get()
+        tk.Label(window_mode_doo, text='Fixed AV Delay(Float): ').place(x=30,y=235)
+        FAVD_value = tk.Entry(window_mode_doo, textvariable = DOO_FAVD, font=('Arial',12))
+        FAVD_value.place(x=230,y=235)
+        
+        update_dict('DOO_FAVD',DOO_FAVD1)
+
+        DOO_AA1 = DOO_AA.get()
+        tk.Label(window_mode_doo, text='Atrial Amplitude(Float): ').place(x=30,y=265)
+        AA_value = tk.Entry(window_mode_doo, textvariable = DOO_AA, font=('Arial',12))
+        AA_value.place(x=230,y=265)
+
+        update_dict('DOO_AA',DOO_AA1)
+
+        DOO_VA1 = DOO_VA.get()
+        tk.Label(window_mode_doo, text='Ventricular Amplitude(Float): ').place(x=30,y=295)
+        AA_value = tk.Entry(window_mode_doo, textvariable = DOO_VA, font=('Arial',12))
+        AA_value.place(x=230,y=295)
+
+        update_dict('DOO_VA',DOO_VA1)
+
+        DOO_APW1 = DOO_APW.get()
+        tk.Label(window_mode_doo, text='Atrial Pulse Width(Float): ').place(x=30,y=325)
+        APW_value = tk.Entry(window_mode_doo, textvariable = DOO_APW, font=('Arial',12))
+        APW_value.place(x=230,y=325)
+
+        update_dict('DOO_APW',DOO_APW1) 
+
+        DOO_VPW1 = DOO_VPW.get()
+        tk.Label(window_mode_doo, text='Ventricular Pulse Width(Float): ').place(x=30,y=355)
+        VPW_value = tk.Entry(window_mode_doo, textvariable = DOO_VPW, font=('Arial',12))
+        VPW_value.place(x=230,y=355)
+
+        update_dict('DOO_VPW',DOO_VPW1)
+
+
     def M_AOOR():
         window_mode_aoor = tk.Toplevel(window)
         window_mode_aoor.geometry('500x500')
@@ -439,106 +546,95 @@ def Button(window,var_connect):
 
 
 
+    def M_AAIR():
+        window_mode_aair = tk.Toplevel(window)
+        window_mode_aair.geometry('500x550')
+        window_mode_aair.title('AAIR is selected!')
+
+        AAIR_LRL1 = AAIR_LRL.get()
+        LRL_value = tk.Entry(window_mode_aair, textvariable = AAIR_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=150)
+        tk.Label(window_mode_aair, text='Lower Rate Limit(Float): ').place(x=30,y=150)
+        update_dict('AAIR_LRL',AAIR_LRL1)
+
+        AAIR_URL1 = AAIR_URL.get()
+        URL_value = tk.Entry(window_mode_aair, textvariable = AAIR_URL, font=('Arial',12))
+        URL_value.place(x=230,y=180)
+        tk.Label(window_mode_aair, text='Upper Rate Limit(Float): ').place(x=30,y=180)
+        update_dict('AAUR_URL',AAIR_URL1)
+
+        AAIR_MSR1 = AAIR_MSR.get()
+        MSR_value = tk.Entry(window_mode_aair, textvariable = AAIR_MSR, font=('Arial',12))
+        MSR_value.place(x=230,y=210)
+        tk.Label(window_mode_aair, text='Maximum Sensor Rate(Float): ').place(x=30,y=210)
+        update_dict('AAIR_MSR',AAIR_MSR1)
+
+        AAIR_AA1 = AAIR_AA.get()
+        AA_value = tk.Entry(window_mode_aair, textvariable = AAIR_AA, font=('Arial',12))
+        AA_value.place(x=230,y=240)
+        tk.Label(window_mode_aair, text='Atrial Amplitude(Float): ').place(x=30,y=240)
+        update_dict('AAIR_AA',AAIR_AA1)
+
+        AAIR_APW1 = AAIR_APW.get()
+        APW_value = tk.Entry(window_mode_aair, textvariable = AAIR_APW, font=('Arial',12))
+        APW_value.place(x=230,y=270)
+        tk.Label(window_mode_aair, text='Atrial Pulse Width (Float): ').place(x=30,y=270)
+        update_dict('AAIR_APW',AAIR_APW1)
+
+        AAIR_AT1 = AAIR_AT.get()
+        AT_value = tk.Entry(window_mode_aair, textvariable = AAIR_AT, font=('Arial',12))
+        AT_value.place(x=230,y=300)
+        tk.Label(window_mode_aair, text='Activity Threshold(Float): ').place(x=30,y=300)
+        update_dict('AAIR_AT',AAIR_AT1)
+
+        AAIR_ReaT1 = AAIR_ReaT.get()
+        ReaT_value = tk.Entry(window_mode_aair, textvariable = AAIR_ReaT, font=('Arial',12))
+        ReaT_value.place(x=230,y=330)
+        tk.Label(window_mode_aair, text='Reaction Time(Float): ').place(x=30,y=330)
+        update_dict('AAIR_ReaT',AAIR_ReaT1)
+
+        AAIR_RF1 = AAIR_RF.get()
+        RF_value = tk.Entry(window_mode_aair, textvariable = AAIR_RF, font=('Arial',12))
+        RF_value.place(x=230,y=360)
+        tk.Label(window_mode_aair, text='Response Factor(Float): ').place(x=30,y=360)
+        update_dict('AAIR_RF',AAIR_RF1)
+
+        AAIR_RecT1 = AAIR_RecT.get()
+        RecT_value = tk.Entry(window_mode_aair, textvariable = AAIR_RecT, font=('Arial',12))
+        RecT_value.place(x=230,y=390)
+        tk.Label(window_mode_aair, text='Recovery Time(Float): ').place(x=30,y=390)
+        update_dict('AAIR_RecT',AAIR_RecT1)
 
 
+        #Add new variables
 
+        AAIR_AS1 = AAIR_AS.get()
+        AS_value = tk.Entry(window_mode_aair, textvariable = AAIR_AS, font=('Arial',12))
+        AS_value.place(x=230,y=420)
+        tk.Label(window_mode_aair, text='Atrial Sensitivity(Float): ').place(x=30,y=420)
+        update_dict('AAIR_AS',AAIR_AS1)
 
+        AAIR_ARP1 = AAIR_ARP.get()
+        ARP_value = tk.Entry(window_mode_aair, textvariable = AAIR_ARP, font=('Arial',12))
+        ARP_value.place(x=230,y=450)
+        tk.Label(window_mode_aair, text='Atrial Refractory Period (integer): ').place(x=30,y=450)
+        update_dict('AAIR_AT',AAIR_ARP1)
 
+        AAIR_PVARP1 = AAIR_PVARP.get()
+        PVARP_value = tk.Entry(window_mode_aair, textvariable = AAIR_PVARP, font=('Arial',12))
+        PVARP_value.place(x=230,y=480)
+        tk.Label(window_mode_aair, text='PVARP (Float): ').place(x=30,y=480)
+        update_dict('AAIR_PVARP',AAIR_PVARP1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    def M_DOO():
-        window_mode_doo = tk.Toplevel(window)
-        window_mode_doo.geometry('500x500')
-        window_mode_doo.title('DOO is selected!')
-        print('100')
-
-        DOO_LRL1 = DOO_LRL.get()
-        tk.Label(window_mode_doo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
-        LRL_value = tk.Entry(window_mode_doo, textvariable = DOO_LRL, font=('Arial',12))
-        LRL_value.place(x=230,y=175)
-
-        update_dict('DOD_LRL',DOO_LRL1)
-
-    
-        DOO_URL1 = DOO_URL.get()
-        tk.Label(window_mode_doo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
-        URL_value = tk.Entry(window_mode_doo, textvariable = DOO_URL, font=('Arial',12))
-        URL_value.place(x=230,y=205)
-
-        update_dict('DOO_URL',DOO_URL1)
         
-        DOO_FAVD1 = DOO_FAVD.get()
-        tk.Label(window_mode_doo, text='Fixed AV Delay(Float): ').place(x=30,y=235)
-        FAVD_value = tk.Entry(window_mode_doo, textvariable = DOO_FAVD, font=('Arial',12))
-        FAVD_value.place(x=230,y=235)
-        
-        update_dict('DOO_FAVD',DOO_FAVD1)
 
-        DOO_AA1 = DOO_AA.get()
-        tk.Label(window_mode_doo, text='Atrial Amplitude(Float): ').place(x=30,y=265)
-        AA_value = tk.Entry(window_mode_doo, textvariable = DOO_AA, font=('Arial',12))
-        AA_value.place(x=230,y=265)
 
-        update_dict('DOO_AA',DOO_AA1)
 
-        DOO_VA1 = DOO_VA.get()
-        tk.Label(window_mode_doo, text='Ventricular Amplitude(Float): ').place(x=30,y=295)
-        AA_value = tk.Entry(window_mode_doo, textvariable = DOO_VA, font=('Arial',12))
-        AA_value.place(x=230,y=295)
-
-        update_dict('DOO_VA',DOO_VA1)
-
-        DOO_APW1 = DOO_APW.get()
-        tk.Label(window_mode_doo, text='Atrial Pulse Width(Float): ').place(x=30,y=325)
-        APW_value = tk.Entry(window_mode_doo, textvariable = DOO_APW, font=('Arial',12))
-        APW_value.place(x=230,y=325)
-
-        update_dict('DOO_APW',DOO_APW1) 
-
-        DOO_VPW1 = DOO_VPW.get()
-        tk.Label(window_mode_doo, text='Ventricular Pulse Width(Float): ').place(x=30,y=355)
-        VPW_value = tk.Entry(window_mode_doo, textvariable = DOO_VPW, font=('Arial',12))
-        VPW_value.place(x=230,y=355)
-
-        update_dict('DOO_VPW',DOO_VPW1)
+   
 
 
         
         
-
-
-
-
-
-
-
-
 
 
 
@@ -581,6 +677,8 @@ def Button(window,var_connect):
     AOOR_Bu = tk.Button(window_mode_selection, text='AOOR_Bu',command= M_AOOR )
     AOOR_Bu.place(x=200,y=280)
 
+    AAIR_Bu = tk.Button(window_mode_selection, text='AAIR_Bu',command= M_AAIR )
+    AAIR_Bu.place(x=280,y=280)
         
             
 

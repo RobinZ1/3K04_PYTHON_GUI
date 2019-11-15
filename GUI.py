@@ -190,9 +190,6 @@ class LoginPage:
             if usr_pwd == usrs_info[usr_name]:
                 tkinter.messagebox.showinfo(title='Welcome',message='You have logged into the pacemaker monitor center!'+usr_name)
                 start = Button(status,var_connect)
-                
-                
-                
 
             else:
                 tkinter.messagebox.showerror(message='Error, your password is wrong, try again!')
