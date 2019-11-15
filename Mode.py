@@ -166,7 +166,7 @@ def update_dict(string, value):
         json_file.close()
 
 def ini_file():
-    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1}
+    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1}
     with open('test_data.txt','w') as json_file:
         json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
 
@@ -472,61 +472,61 @@ def Button(window,var_connect):
 
 
 
-    # def M_DOO():
-    #     window_mode_doo = tk.Toplevel(window)
-    #     window_mode_doo.geometry('500x500')
-    #     window_mode_doo.title('ODD is selected!')
-    #     print('100')
+    def M_DOO():
+        window_mode_doo = tk.Toplevel(window)
+        window_mode_doo.geometry('500x500')
+        window_mode_doo.title('DOO is selected!')
+        print('100')
 
-    #     DOO_LRL1 = DOO_LRL.get()
-    #     tk.Label(window_mode_doo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
-    #     LRL_value = tk.Entry(window_mode_doo, textvariable = DOO_LRL, font=('Arial',12))
-    #     LRL_value.place(x=230,y=175)
+        DOO_LRL1 = DOO_LRL.get()
+        tk.Label(window_mode_doo, text='Lower Rate Limit(Int): ').place(x=30,y=175)
+        LRL_value = tk.Entry(window_mode_doo, textvariable = DOO_LRL, font=('Arial',12))
+        LRL_value.place(x=230,y=175)
 
-    #     update_dict('ODD_LRL',ODD_LRL1)
+        update_dict('DOD_LRL',DOO_LRL1)
 
     
-    #     DOO_URL1 = DOO_URL.get()
-    #     tk.Label(window_mode_doo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
-    #     URL_value = tk.Entry(window_mode_doo, textvariable = DOO_URL, font=('Arial',12))
-    #     URL_value.place(x=230,y=205)
+        DOO_URL1 = DOO_URL.get()
+        tk.Label(window_mode_doo, text='Upper Rate Limit(Int): ').place(x=30,y=205)
+        URL_value = tk.Entry(window_mode_doo, textvariable = DOO_URL, font=('Arial',12))
+        URL_value.place(x=230,y=205)
 
-    #     update_dict('DOO_URL',DOO_URL1)
+        update_dict('DOO_URL',DOO_URL1)
         
-    #     DOO_FAVD1 = DOO_FAVD.get()
-    #     tk.Label(window_mode_doo, text='Fixed AV Delay(Float): ').place(x=30,y=235)
-    #     FAVD_value = tk.Entry(window_mode_doo, textvariable = DOO_FAVD, font=('Arial',12))
-    #     FAVD_value.place(x=230,y=235)
+        DOO_FAVD1 = DOO_FAVD.get()
+        tk.Label(window_mode_doo, text='Fixed AV Delay(Float): ').place(x=30,y=235)
+        FAVD_value = tk.Entry(window_mode_doo, textvariable = DOO_FAVD, font=('Arial',12))
+        FAVD_value.place(x=230,y=235)
         
-    #     update_dict('DOO_FAVD',DOO_FAVD1)
+        update_dict('DOO_FAVD',DOO_FAVD1)
 
-    #     DOO_AA1 = DOO_AA.get()
-    #     tk.Label(window_mode_doo, text='Atrial Amplitude(Float): ').place(x=30,y=265)
-    #     AA_value = tk.Entry(window_mode_doo, textvariable = DOO_AA, font=('Arial',12))
-    #     AA_value.place(x=230,y=265)
+        DOO_AA1 = DOO_AA.get()
+        tk.Label(window_mode_doo, text='Atrial Amplitude(Float): ').place(x=30,y=265)
+        AA_value = tk.Entry(window_mode_doo, textvariable = DOO_AA, font=('Arial',12))
+        AA_value.place(x=230,y=265)
 
-    #     update_dict('DOO_AA',DOO_AA1)
+        update_dict('DOO_AA',DOO_AA1)
 
-    #     DOO_VA1 = DOO_VA.get()
-    #     tk.Label(window_mode_doo, text='Ventricular Amplitude(Float): ').place(x=30,y=265)
-    #     AA_value = tk.Entry(window_mode_doo, textvariable = DOO_VA, font=('Arial',12))
-    #     AA_value.place(x=230,y=295)
+        DOO_VA1 = DOO_VA.get()
+        tk.Label(window_mode_doo, text='Ventricular Amplitude(Float): ').place(x=30,y=295)
+        AA_value = tk.Entry(window_mode_doo, textvariable = DOO_VA, font=('Arial',12))
+        AA_value.place(x=230,y=295)
 
-    #     update_dict('DOO_VA',DOO_VA1)
+        update_dict('DOO_VA',DOO_VA1)
 
-    #     DOO_APW1 = DOO_APW.get()
-    #     tk.Label(window_mode_doo, text='Atrial Pulse Width(Float): ').place(x=30,y=265)
-    #     APW_value = tk.Entry(window_mode_doo, textvariable = DOO_APW, font=('Arial',12))
-    #     APW_value.place(x=230,y=325)
+        DOO_APW1 = DOO_APW.get()
+        tk.Label(window_mode_doo, text='Atrial Pulse Width(Float): ').place(x=30,y=325)
+        APW_value = tk.Entry(window_mode_doo, textvariable = DOO_APW, font=('Arial',12))
+        APW_value.place(x=230,y=325)
 
-    #     update_dict('DOO_APW',DOO_APW1)
+        update_dict('DOO_APW',DOO_APW1) 
 
-    #     DOO_VPW1 = DOO_VPW.get()
-    #     tk.Label(window_mode_doo, text='Ventricular Pulse Width(Float): ').place(x=30,y=265)
-    #     VPW_value = tk.Entry(window_mode_doo, textvariable = DOO_VPW, font=('Arial',12))
-    #     VPW_value.place(x=230,y=355)
+        DOO_VPW1 = DOO_VPW.get()
+        tk.Label(window_mode_doo, text='Ventricular Pulse Width(Float): ').place(x=30,y=355)
+        VPW_value = tk.Entry(window_mode_doo, textvariable = DOO_VPW, font=('Arial',12))
+        VPW_value.place(x=230,y=355)
 
-    #     update_dict('DOO_VPW',DOO_VPW1)
+        update_dict('DOO_VPW',DOO_VPW1)
 
 
         
@@ -575,9 +575,11 @@ def Button(window,var_connect):
     VVI_Bu = tk.Button(window_mode_selection, text='VVI_Bu',command= M_VVI )
     VVI_Bu.place(x=360,y=240)
 
+    DOO_Bu = tk.Button(window_mode_selection, text='DOO_Bu',command= M_DOO )
+    DOO_Bu.place(x=120,y=280)
 
     AOOR_Bu = tk.Button(window_mode_selection, text='AOOR_Bu',command= M_AOOR )
-    AOOR_Bu.place(x=120,y=280)
+    AOOR_Bu.place(x=200,y=280)
 
         
             
