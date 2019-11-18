@@ -388,7 +388,7 @@ def Button(window,var_connect):
         VVI_VRP1 = VVI_VRP.get()
         VRP_value = tk.Entry(window_mode_vvi, textvariable = VVI_VRP, font=('Arial',12))
         VRP_value.place(x=280,y=295)
-        tk.Label(window_mode_vvi, text='Ventricular Refractory Period(Float): ').place(x=30,y=295)
+        tk.Label(window_mode_vvi, text='Ventricular Refractory Period(Int)(150ms-500ms): ').place(x=30,y=295)
         update_dict('VVI_VRP',VVI_VRP1)
 
         VVI_Com = tk.Button(window_mode_vvi, text='VVI_COMPARE', command=M_VVI)
@@ -441,7 +441,7 @@ def Button(window,var_connect):
         AAI_ARP1 = AAI_ARP.get()
         ARP_value = tk.Entry(window_mode_aai, textvariable = AAI_ARP, font=('Arial',12))
         ARP_value.place(x=280,y=295)
-        tk.Label(window_mode_aai, text='Atrial Refractory Period(Float): ').place(x=30,y=295)
+        tk.Label(window_mode_aai, text='Atrial Refractory Period(Int)(150ms-500ms): ').place(x=30,y=295)
         update_dict('AAI_ARP',AAI_ARP1)
 
         AAI_Com = tk.Button(window_mode_aai, text='AAI_COMPARE', command=M_AAI)
@@ -645,33 +645,35 @@ def Button(window,var_connect):
 
         AOOR_AT1 = AOOR_AT.get()
         AT_value = tk.Entry(window_mode_aoor, textvariable = AOOR_AT, font=('Arial',12))
-        AT_value.place(x=280,y=300)
-        tk.Label(window_mode_aoor, text='Activity Threshold(Float): ').place(x=30,y=300)
+        AT_value.place(x=280,y=315)
+        tk.Label(window_mode_aoor, text='Activity Threshold(Int)(1-7): ').place(x=30,y=300)
+        tk.Label(window_mode_aoor, text='1:V-Low, 2:Low, 3:Med-Low, 4:Med').place(x=30,y=315)
+        tk.Label(window_mode_aoor, text='5:Med-High, 6:High, 7:V-High').place(x=30,y=330)
         update_dict('AOOR_AT',AOOR_AT1)
 
         AOOR_ReaT1 = AOOR_ReaT.get()
         ReaT_value = tk.Entry(window_mode_aoor, textvariable = AOOR_ReaT, font=('Arial',12))
-        ReaT_value.place(x=280,y=330)
-        tk.Label(window_mode_aoor, text='Reaction Time(Float): ').place(x=30,y=330)
+        ReaT_value.place(x=280,y=360)
+        tk.Label(window_mode_aoor, text='Reaction Time(Int)(10sec-50sec): ').place(x=30,y=360)
         update_dict('AOOR_ReaT',AOOR_ReaT1)
 
         AOOR_RF1 = AOOR_RF.get()
         RF_value = tk.Entry(window_mode_aoor, textvariable = AOOR_RF, font=('Arial',12))
-        RF_value.place(x=280,y=360)
-        tk.Label(window_mode_aoor, text='Response Factor(Float): ').place(x=30,y=360)
+        RF_value.place(x=280,y=390)
+        tk.Label(window_mode_aoor, text='Response Factor(Int)(1-16): ').place(x=30,y=390)
         update_dict('AOOR_RF',AOOR_RF1)
 
         AOOR_RecT1 = AOOR_RecT.get()
         RecT_value = tk.Entry(window_mode_aoor, textvariable = AOOR_RecT, font=('Arial',12))
-        RecT_value.place(x=280,y=390)
-        tk.Label(window_mode_aoor, text='Recovery Time(Float): ').place(x=30,y=390)
+        RecT_value.place(x=280,y=420)
+        tk.Label(window_mode_aoor, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
         update_dict('AOOR_RecT',AOOR_RecT1)
 
 
 
     def M_AAIR():
         window_mode_aair = tk.Toplevel(window)
-        window_mode_aair.geometry('500x550')
+        window_mode_aair.geometry('500x600')
         window_mode_aair.title('AAIR is selected!')
 
         AAIR_LRL1 = AAIR_LRL.get()
@@ -706,26 +708,28 @@ def Button(window,var_connect):
 
         AAIR_AT1 = AAIR_AT.get()
         AT_value = tk.Entry(window_mode_aair, textvariable = AAIR_AT, font=('Arial',12))
-        AT_value.place(x=280,y=300)
-        tk.Label(window_mode_aair, text='Activity Threshold(Float): ').place(x=30,y=300)
+        AT_value.place(x=280,y=315)
+        tk.Label(window_mode_aair, text='Activity Threshold(Int)(1-7): ').place(x=30,y=300)
+        tk.Label(window_mode_aair, text='1:V-Low, 2:Low, 3:Med-Low, 4:Med').place(x=30,y=315)
+        tk.Label(window_mode_aair, text='5:Med-High, 6:High, 7:V-High').place(x=30,y=330)
         update_dict('AAIR_AT',AAIR_AT1)
 
         AAIR_ReaT1 = AAIR_ReaT.get()
         ReaT_value = tk.Entry(window_mode_aair, textvariable = AAIR_ReaT, font=('Arial',12))
-        ReaT_value.place(x=280,y=330)
-        tk.Label(window_mode_aair, text='Reaction Time(Float): ').place(x=30,y=330)
+        ReaT_value.place(x=280,y=360)
+        tk.Label(window_mode_aair, text='Reaction Time(Int)(10sec-50sec): ').place(x=30,y=360)
         update_dict('AAIR_ReaT',AAIR_ReaT1)
 
         AAIR_RF1 = AAIR_RF.get()
         RF_value = tk.Entry(window_mode_aair, textvariable = AAIR_RF, font=('Arial',12))
-        RF_value.place(x=280,y=360)
-        tk.Label(window_mode_aair, text='Response Factor(Float): ').place(x=30,y=360)
+        RF_value.place(x=280,y=390)
+        tk.Label(window_mode_aair, text='Response Factor(Int)(1-16): ').place(x=30,y=390)
         update_dict('AAIR_RF',AAIR_RF1)
 
         AAIR_RecT1 = AAIR_RecT.get()
         RecT_value = tk.Entry(window_mode_aair, textvariable = AAIR_RecT, font=('Arial',12))
-        RecT_value.place(x=280,y=390)
-        tk.Label(window_mode_aair, text='Recovery Time(Float): ').place(x=30,y=390)
+        RecT_value.place(x=280,y=420)
+        tk.Label(window_mode_aair, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
         update_dict('AAIR_RecT',AAIR_RecT1)
 
 
@@ -733,20 +737,20 @@ def Button(window,var_connect):
 
         AAIR_AS1 = AAIR_AS.get()
         AS_value = tk.Entry(window_mode_aair, textvariable = AAIR_AS, font=('Arial',12))
-        AS_value.place(x=280,y=420)
-        tk.Label(window_mode_aair, text='Atrial Sensitivity(Float): ').place(x=30,y=420)
+        AS_value.place(x=280,y=450)
+        tk.Label(window_mode_aair, text='Atrial Sensitivity(Float)(1.0mV-10mV): ').place(x=30,y=450)
         update_dict('AAIR_AS',AAIR_AS1)
 
         AAIR_ARP1 = AAIR_ARP.get()
         ARP_value = tk.Entry(window_mode_aair, textvariable = AAIR_ARP, font=('Arial',12))
-        ARP_value.place(x=280,y=450)
-        tk.Label(window_mode_aair, text='Atrial Refractory Period (integer): ').place(x=30,y=450)
+        ARP_value.place(x=280,y=480)
+        tk.Label(window_mode_aair, text='Atrial Refractory Period(Int)(150ms-500ms): ').place(x=30,y=480)
         update_dict('AAIR_AT',AAIR_ARP1)
 
         AAIR_PVARP1 = AAIR_PVARP.get()
         PVARP_value = tk.Entry(window_mode_aair, textvariable = AAIR_PVARP, font=('Arial',12))
-        PVARP_value.place(x=280,y=480)
-        tk.Label(window_mode_aair, text='PVARP (Float): ').place(x=30,y=480)
+        PVARP_value.place(x=280,y=510)
+        tk.Label(window_mode_aair, text='PVARP(Int)(150ms-500ms): ').place(x=30,y=510)
         update_dict('AAIR_PVARP',AAIR_PVARP1)
 
         
@@ -791,32 +795,34 @@ def Button(window,var_connect):
 
         VOOR_AT1 = VOOR_AT.get()
         AT_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_AT, font=('Arial',12))
-        AT_value.place(x=280,y=300)
-        tk.Label(window_mode_VOOR, text='Activity Threshold(Float): ').place(x=30,y=300)
+        AT_value.place(x=280,y=315)
+        tk.Label(window_mode_VOOR, text='Activity Threshold(Int)(1-7): ').place(x=30,y=300)
+        tk.Label(window_mode_VOOR, text='1:V-Low, 2:Low, 3:Med-Low, 4:Med').place(x=30,y=315)
+        tk.Label(window_mode_VOOR, text='5:Med-High, 6:High, 7:V-High').place(x=30,y=330)
         update_dict('VOOR_AT',VOOR_AT1)
 
         VOOR_ReaT1 = VOOR_ReaT.get()
         ReaT_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_ReaT, font=('Arial',12))
-        ReaT_value.place(x=280,y=330)
-        tk.Label(window_mode_VOOR, text='Reaction Time(Float): ').place(x=30,y=330)
+        ReaT_value.place(x=280,y=360)
+        tk.Label(window_mode_VOOR, text='Reaction Time(Int)(10sec-50sec): ').place(x=30,y=360)
         update_dict('VOOR_ReaT',VOOR_ReaT1)
 
         VOOR_RF1 = VOOR_RF.get()
         RF_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_RF, font=('Arial',12))
-        RF_value.place(x=280,y=360)
-        tk.Label(window_mode_VOOR, text='Response Factor(Float): ').place(x=30,y=360)
+        RF_value.place(x=280,y=420)
+        tk.Label(window_mode_VOOR, text='Response Factor(Int)(1-16): ').place(x=30,y=420)
         update_dict('VOOR_RF',VOOR_RF1)
 
         VOOR_RecT1 = VOOR_RecT.get()
         RecT_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_RecT, font=('Arial',12))
-        RecT_value.place(x=280,y=390)
-        tk.Label(window_mode_VOOR, text='Recovery Time(Float): ').place(x=30,y=390)
+        RecT_value.place(x=280,y=450)
+        tk.Label(window_mode_VOOR, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=450)
         update_dict('VOOR_RecT',VOOR_RecT1)
 
 
     def M_VVIR():
         window_mode_VVIR = tk.Toplevel(window)
-        window_mode_VVIR.geometry('500x500')
+        window_mode_VVIR.geometry('500x550')
         window_mode_VVIR.title('VVIR is selected!')
 
         VVIR_LRL1 = VVIR_LRL.get()
@@ -851,45 +857,47 @@ def Button(window,var_connect):
 
         VVIR_AT1 = VVIR_AT.get()
         AT_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_AT, font=('Arial',12))
-        AT_value.place(x=280,y=300)
-        tk.Label(window_mode_VVIR, text='Activity Threshold(Float): ').place(x=30,y=300)
+        AT_value.place(x=280,y=315)
+        tk.Label(window_mode_VVIR, text='Activity Threshold(Int)(1-7): ').place(x=30,y=300)
+        tk.Label(window_mode_VVIR, text='1:V-Low, 2:Low, 3:Med-Low, 4:Med').place(x=30,y=315)
+        tk.Label(window_mode_VVIR, text='5:Med-High, 6:High, 7:V-High').place(x=30,y=330)
         update_dict('VVIR_AT',VVIR_AT1)
 
         VVIR_ReaT1 = VVIR_ReaT.get()
         ReaT_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_ReaT, font=('Arial',12))
-        ReaT_value.place(x=280,y=330)
-        tk.Label(window_mode_VVIR, text='Reaction Time(Float): ').place(x=30,y=330)
+        ReaT_value.place(x=280,y=360)
+        tk.Label(window_mode_VVIR, text='Reaction Time(Int)(10sec-50sec): ').place(x=30,y=360)
         update_dict('VVIR_ReaT',VVIR_ReaT1)
 
         VVIR_RF1 = VVIR_RF.get()
         RF_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_RF, font=('Arial',12))
-        RF_value.place(x=280,y=360)
-        tk.Label(window_mode_VVIR, text='Response Factor(Float): ').place(x=30,y=360)
+        RF_value.place(x=280,y=390)
+        tk.Label(window_mode_VVIR, text='Response Factor(Int)(1-16): ').place(x=30,y=390)
         update_dict('VVIR_RF',VVIR_RF1)
 
         VVIR_RecT1 = VVIR_RecT.get()
         RecT_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_RecT, font=('Arial',12))
-        RecT_value.place(x=280,y=390)
-        tk.Label(window_mode_VVIR, text='Recovery Time(Float): ').place(x=30,y=390)
+        RecT_value.place(x=280,y=420)
+        tk.Label(window_mode_VVIR, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
         update_dict('VVIR_RecT',VVIR_RecT1)
 
         VVIR_VS1 = VVIR_VS.get()
         VS_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VS, font=('Arial',12))
-        VS_value.place(x=280,y=420)
-        tk.Label(window_mode_VVIR, text='Ventricular Sensitivity(Float): ').place(x=30,y=420)
+        VS_value.place(x=280,y=450)
+        tk.Label(window_mode_VVIR, text='Ventricular Sensitivity(Float)(0.1mV-10mV): ').place(x=30,y=450)
         update_dict('VVIR_VS',VVIR_VS1)
 
         VVIR_VRP1 = VVIR_VRP.get()
         VRP_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VRP, font=('Arial',12))
-        VRP_value.place(x=280,y=450)
-        tk.Label(window_mode_VVIR, text='Ventricular Refractory Period(Float): ').place(x=30,y=450)
+        VRP_value.place(x=280,y=480)
+        tk.Label(window_mode_VVIR, text='Ventricular Refractory Period(Int)(150ms-500ms): ').place(x=30,y=480)
         update_dict('VVIR_VRP',VVIR_VRP1)
         
         
 
     def M_DOOR():
         window_mode_DOOR = tk.Toplevel(window)
-        window_mode_DOOR.geometry('500x550')
+        window_mode_DOOR.geometry('500x600')
         window_mode_DOOR.title('DOOR is selected!')
 
         DOOR_LRL1 = DOOR_LRL.get()
@@ -924,44 +932,46 @@ def Button(window,var_connect):
 
         DOOR_AT1 = DOOR_AT.get()
         AT_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_AT, font=('Arial',12))
-        AT_value.place(x=280,y=300)
-        tk.Label(window_mode_DOOR, text='Activity Threshold(Float): ').place(x=30,y=300)
+        AT_value.place(x=280,y=315)
+        tk.Label(window_mode_DOOR, text='Activity Threshold(Int)(1-7): ').place(x=30,y=300)
+        tk.Label(window_mode_DOOR, text='1:V-Low, 2:Low, 3:Med-Low, 4:Med').place(x=30,y=315)
+        tk.Label(window_mode_DOOR, text='5:Med-High, 6:High, 7:V-High').place(x=30,y=330)
         update_dict('DOOR_AT',DOOR_AT1)
 
         DOOR_ReaT1 = DOOR_ReaT.get()
         ReaT_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_ReaT, font=('Arial',12))
-        ReaT_value.place(x=280,y=330)
-        tk.Label(window_mode_DOOR, text='Reaction Time(Float): ').place(x=30,y=330)
+        ReaT_value.place(x=280,y=360)
+        tk.Label(window_mode_DOOR, text='Reaction Time(Int)(10sec-50sec): ').place(x=30,y=360)
         update_dict('DOOR_ReaT',DOOR_ReaT1)
 
         DOOR_RF1 = DOOR_RF.get()
         RF_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_RF, font=('Arial',12))
-        RF_value.place(x=280,y=360)
-        tk.Label(window_mode_DOOR, text='Response Factor(Float): ').place(x=30,y=360)
+        RF_value.place(x=280,y=390)
+        tk.Label(window_mode_DOOR, text='Response Factor(Int)(1-16): ').place(x=30,y=390)
         update_dict('DOOR_RF',DOOR_RF1)
 
         DOOR_RecT1 = DOOR_RecT.get()
         RecT_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_RecT, font=('Arial',12))
-        RecT_value.place(x=280,y=390)
-        tk.Label(window_mode_DOOR, text='Recovery Time(Float): ').place(x=30,y=390)
+        RecT_value.place(x=280,y=420)
+        tk.Label(window_mode_DOOR, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
         update_dict('DOOR_RecT',DOOR_RecT1)
 
         DOOR_FAVD1 = DOOR_FAVD.get()
         FAVD_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_FAVD, font=('Arial',12))
-        FAVD_value.place(x=280,y=420)
-        tk.Label(window_mode_DOOR, text='Fixed AV Delay(Int)(70ms-300ms)').place(x=30,y=420)
+        FAVD_value.place(x=280,y=450)
+        tk.Label(window_mode_DOOR, text='Fixed AV Delay(Int)(70ms-300ms)').place(x=30,y=450)
         update_dict('DOOR_FAVD',DOOR_FAVD1)
 
         DOOR_AA1 = DOOR_AA.get()
         AA_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_AA, font=('Arial',12))
-        AA_value.place(x=280,y=450)
-        tk.Label(window_mode_DOOR, text='Atrial Amplitude(Float)(3.5V-7.0V): ').place(x=30,y=450)
+        AA_value.place(x=280,y=480)
+        tk.Label(window_mode_DOOR, text='Atrial Amplitude(Float)(3.5V-7.0V): ').place(x=30,y=480)
         update_dict('DOOR_AA',DOOR_AA1)
 
         DOOR_APW1 = DOOR_APW.get()
         APW_value = tk.Entry(window_mode_DOOR, textvariable = DOOR_APW, font=('Arial',12))
-        APW_value.place(x=280,y=480)
-        tk.Label(window_mode_DOOR, text='Atrial Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=480)
+        APW_value.place(x=280,y=510)
+        tk.Label(window_mode_DOOR, text='Atrial Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=510)
         update_dict('DOOR_APW',DOOR_APW1)
 
 
