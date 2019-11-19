@@ -604,9 +604,28 @@ def Button(window,var_connect):
         tk.Label(window_mode_doo, text='Ventricular Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=355)
         VPW_value = tk.Entry(window_mode_doo, textvariable = DOO_VPW, font=('Arial',12))
         VPW_value.place(x=280,y=355)
-
         update_dict('DOO_VPW',DOO_VPW1)
 
+        DOO_Com = tk.Button(window_mode_doo, text='DOO_COMPARE', command=M_DOO)
+        DOO_Com.place(x=50,y=390)
+        if DOO_LRL1 == 0:
+            print('1')
+        else :
+            if DOO_LRL1<30 or DOO_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL is out of range!')
+            elif DOO_URL1<50 or DOO_URL1>175:
+                tkinter.messagebox.showerror('Error','URL is out of range!')
+            elif DOO_FAVD1<70 or DOO_FAVD1>300:
+                tkinter.messagebox.showerror('Error', 'FAVD is out of range')
+            elif DOO_AA1<3.5 or DOO_AA1>7.0:
+                tkinter.messagebox.showerror('Error', 'AA is out of range')
+            elif DOO_VA1<3.5 or DOO_VA1>7.0:
+                tkinter.messagebox.showerror('Error','VA is out of range!')
+            elif DOO_APW1<1 or DOO_APW1>10:
+                tkinter.messagebox.showerror('Error', 'APW is out of range')
+            elif DOO_VPW1<1 or DOO_VPW1>10:
+                tkinter.messagebox.showerror('Error','VPW is out of range!')
+            
 
     def M_AOOR():
         window_mode_aoor = tk.Toplevel(window)
@@ -669,6 +688,27 @@ def Button(window,var_connect):
         tk.Label(window_mode_aoor, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
         update_dict('AOOR_RecT',AOOR_RecT1)
 
+        AOOR_Com = tk.Button(window_mode_aoor, text='AOOR_COMPARE', command=M_AOOR)
+        AOOR_Com.place(x=50,y=450)
+        if AOOR_LRL1 == 0:
+            print('1')
+        else :
+            if AOOR_LRL1<30 or AOOR_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL is out of range!')
+            elif AOOR_URL1<50 or AOOR_URL1>175:
+                tkinter.messagebox.showerror('Error','URL is out of range!')
+            elif AOOR_MSR1<50 or AOOR_MSR1>175:
+                tkinter.messagebox.showerror('Error','MSR is out of range!')
+            elif AOOR_AA1<3.5 or AOOR_AA1>7.0:
+                tkinter.messagebox.showerror('Error', 'AA is out of range!')
+            elif AOOR_APW1<0.1 or AOOR_APW1>1.9:
+                tkinter.messagebox.showerror('Error', 'APW is out of range!')
+            elif AOOR_ReaT1<10 or AOOR_ReaT1>50:
+                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+            elif AOOR_RF1<1 or AOOR_RF1>16:
+                tkinter.messagebox.showerror('Error', 'RF is out of range!')
+            elif AOOR_RecT1<2 or AOOR_RecT1>16:
+                tkinter.messagebox.showerror('Error', 'RecT is out of range!')
 
 
     def M_AAIR():
@@ -753,7 +793,34 @@ def Button(window,var_connect):
         tk.Label(window_mode_aair, text='PVARP(Int)(150ms-500ms): ').place(x=30,y=510)
         update_dict('AAIR_PVARP',AAIR_PVARP1)
 
-        
+        AAIR_Com = tk.Button(window_mode_aair, text='AAIR_COMPARE', command=M_AAIR)
+        AAIR_Com.place(x=50,y=550)
+        if AAIR_LRL1 == 0:
+            print('1')
+        else :
+            if AAIR_LRL1<30 or AAIR_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL is out of range!')
+            elif AAIR_URL1<50 or AAIR_URL1>175:
+                tkinter.messagebox.showerror('Error','URL is out of range!')
+            elif AAIR_MSR1<50 or AAIR_MSR1>175:
+                tkinter.messagebox.showerror('Error','MSR is out of range!')
+            elif AAIR_AA1<3.5 or AAIR_AA1>7.0:
+                tkinter.messagebox.showerror('Error', 'AA is out of range')
+            elif AAIR_APW1<0.1 or AAIR_APW1>1.9:
+                tkinter.messagebox.showerror('Error', 'APW is out of range')
+            elif AAIR_ReaT1<10 or AAIR_ReaT1>50:
+                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+            elif AAIR_RF1<1 or AAIR_RF1>16:
+                tkinter.messagebox.showerror('Error', 'RF is out of range')
+            elif AAIR_RecT1<2 or AAIR_RecT1>16:
+                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+            elif AAIR_AS1<1 or AAIR_AS1>10:
+                tkinter.messagebox.showerror('Error', 'AS is out of range')
+            elif AAIR_ARP1<150 or AAIR_ARP1>500:
+                tkinter.messagebox.showerror('Error', 'ARP is out of range')
+            elif AAIR_PVARP1<150 or AAIR_PVARP1>500:
+                tkinter.messagebox.showerror('Error', 'PVARP is out of range')
+
 
 
         #VOOR
@@ -809,15 +876,41 @@ def Button(window,var_connect):
 
         VOOR_RF1 = VOOR_RF.get()
         RF_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_RF, font=('Arial',12))
-        RF_value.place(x=280,y=420)
-        tk.Label(window_mode_VOOR, text='Response Factor(Int)(1-16): ').place(x=30,y=420)
+        RF_value.place(x=280,y=390)
+        tk.Label(window_mode_VOOR, text='Response Factor(Int)(1-16): ').place(x=30,y=390)
         update_dict('VOOR_RF',VOOR_RF1)
 
         VOOR_RecT1 = VOOR_RecT.get()
         RecT_value = tk.Entry(window_mode_VOOR, textvariable = VOOR_RecT, font=('Arial',12))
-        RecT_value.place(x=280,y=450)
-        tk.Label(window_mode_VOOR, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=450)
+        RecT_value.place(x=280,y=420)
+        tk.Label(window_mode_VOOR, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
         update_dict('VOOR_RecT',VOOR_RecT1)
+
+        VOOR_Com = tk.Button(window_mode_VOOR, text='VOOR_COMPARE', command=M_VOOR)
+        VOOR_Com.place(x=50,y=460)
+        if VOOR_LRL1 == 0:
+            print('1')
+        else :
+            if VOOR_LRL1<30 or VOOR_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL is out of range!')
+            elif VOOR_URL1<50 or VOOR_URL1>175:
+                tkinter.messagebox.showerror('Error','URL is out of range!')
+            elif VOOR_MSR1<50 or VOOR_MSR1>175:
+                tkinter.messagebox.showerror('Error','MSR is out of range!')
+            elif VOOR_VA1<3.5 or VOOR_VA1>7.0:
+                tkinter.messagebox.showerror('Error', 'VA is out of range')
+            elif VOOR_VPW1<0.1 or VOOR_VPW1>1.9:
+                tkinter.messagebox.showerror('Error', 'VPW is out of range')
+            elif VOOR_ReaT1<10 or VOOR_ReaT1>50:
+                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+            elif VOOR_RF1<1 or VOOR_RF1>16:
+                tkinter.messagebox.showerror('Error', 'RF is out of range')
+            elif VOOR_RecT1<2 or VOOR_RecT1>16:
+                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+        
+
+
+
 
 
     def M_VVIR():
@@ -892,6 +985,33 @@ def Button(window,var_connect):
         VRP_value.place(x=280,y=480)
         tk.Label(window_mode_VVIR, text='Ventricular Refractory Period(Int)(150ms-500ms): ').place(x=30,y=480)
         update_dict('VVIR_VRP',VVIR_VRP1)
+
+        VVIR_Com = tk.Button(window_mode_VVIR, text='VVIR_COMPARE', command=M_VVIR)
+        VVIR_Com.place(x=50,y=510)
+        if VVIR_LRL1 == 0:
+            print('1')
+        else :
+            if VVIR_LRL1<30 or VVIR_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL is out of range!')
+            elif VVIR_URL1<50 or VVIR_URL1>175:
+                tkinter.messagebox.showerror('Error','URL is out of range!')
+            elif VVIR_MSR1<50 or VVIR_MSR1>175:
+                tkinter.messagebox.showerror('Error','MSR is out of range!')
+            elif VVIR_VA1<3.5 or VVIR_VA1>7.0:
+                tkinter.messagebox.showerror('Error', 'VA is out of range')
+            elif VVIR_VPW1<0.1 or VVIR_VPW1>1.9:
+                tkinter.messagebox.showerror('Error', 'VPW is out of range')
+            elif VVIR_ReaT1<10 or VVIR_ReaT1>50:
+                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+            elif VVIR_RF1<1 or VVIR_RF1>16:
+                tkinter.messagebox.showerror('Error', 'RF is out of range')
+            elif VVIR_RecT1<2 or VVIR_RecT1>16:
+                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+            elif VVIR_VS1<1 or VVIR_VS1>10:
+                tkinter.messagebox.showerror('Error', 'VS is out of range')
+            elif VVIR_VRP1<150 or VVIR_VRP1>500:
+                tkinter.messagebox.showerror('Error', 'VRP is out of range')
+            
         
         
 
@@ -974,7 +1094,36 @@ def Button(window,var_connect):
         tk.Label(window_mode_DOOR, text='Atrial Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=510)
         update_dict('DOOR_APW',DOOR_APW1)
 
-
+        DOOR_Com = tk.Button(window_mode_DOOR, text='DOOR_COMPARE', command=M_DOOR)
+        DOOR_Com.place(x=50,y=550)
+        if DOOR_LRL1 == 0:
+            print('1')
+        else :
+            if DOOR_LRL1<30 or DOOR_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL is out of range!')
+            elif DOOR_URL1<50 or DOOR_URL1>175:
+                tkinter.messagebox.showerror('Error','URL is out of range!')
+            elif DOOR_MSR1<50 or DOOR_MSR1>175:
+                tkinter.messagebox.showerror('Error','MSR is out of range!')
+            elif DOOR_VA1<3.5 or DOOR_VA1>7.0:
+                tkinter.messagebox.showerror('Error', 'VA is out of range')
+            elif DOOR_VPW1<0.1 or DOOR_VPW1>1.9:
+                tkinter.messagebox.showerror('Error', 'VPW is out of range')
+            elif DOOR_ReaT1<10 or DOOR_ReaT1>50:
+                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+            elif DOOR_RF1<1 or DOOR_RF1>16:
+                tkinter.messagebox.showerror('Error', 'RF is out of range')
+            elif DOOR_RecT1<2 or DOOR_RecT1>16:
+                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+            elif DOOR_FAVD1<70 or DOOR_FAVD1>300:
+                tkinter.messagebox.showerror('Error', 'FAVD is out of range')
+            elif DOOR_AA1<3.5 or DOOR_AA1>7.0:
+                tkinter.messagebox.showerror('Error', 'AA is out of range')
+            elif DOOR_APW1<0.1 or DOOR_APW1>1.9:
+                tkinter.messagebox.showerror('Error', 'APW is out of range')
+            
+            
+            
 
 
 
