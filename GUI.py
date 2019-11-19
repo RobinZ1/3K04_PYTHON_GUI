@@ -9,7 +9,7 @@ window = tk.Tk()
 status = window 
 window.title('Welcome to 3K04!')
 window.geometry('400x300')
-from Mode import Button
+from Mode import Button        
 from Mode import ini_file
 # welcome page
 canvas = tk.Canvas(window, width=400, height=135, bg='green')
