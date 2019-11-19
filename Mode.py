@@ -349,7 +349,7 @@ def Button(window,var_connect):
     window_mode_selection = tk.Toplevel(window)
     window_mode_selection.geometry('600x500')
     window_mode_selection.title('Mode Selection')
-
+    \
     print(var_connect[1])
     if var_connect[1] == 1:
         tk.Label(window_mode_selection, text='Device is connecting',font=('Arial',12)).place(x=200,y=100)
