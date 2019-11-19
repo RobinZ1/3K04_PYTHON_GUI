@@ -355,7 +355,7 @@ def Button(window,var_connect):
         tk.Label(window_mode_selection, text='Device is connecting',font=('Arial',12)).place(x=200,y=100)
     else :
         tk.Label(window_mode_selection, text='Device is disconnecting',font=('Arial',12)).place(x=200,y=100)
-
+        
     def M_VVI():
         window_mode_vvi = tk.Toplevel(window)
         window_mode_vvi.geometry('500x500')
@@ -406,6 +406,8 @@ def Button(window,var_connect):
                 tkinter.messagebox.showerror('Error','VPW out of range!')
             elif VVI_VRP1<150 or VVI_VRP1>500:
                 tkinter.messagebox.showerror('Error','VRP out of range!')
+    
+
 
 
 
@@ -470,39 +472,50 @@ def Button(window,var_connect):
         LRL_value = tk.Entry(window_mode_voo, textvariable = VOO_LRL, font=('Arial',12))
         LRL_value.place(x=280,y=175)
         tk.Label(window_mode_voo, text='Lower Rate Limit(Int)(30ppm-175ppm): ').place(x=30,y=175)
-        update_dict('VOO_LRL',VOO_LRL1)
+        
 
         VOO_URL1 = VOO_URL.get()
         URL_value = tk.Entry(window_mode_voo, textvariable = VOO_URL, font=('Arial',12))
         URL_value.place(x=280,y=205)
         tk.Label(window_mode_voo, text='Upper Rate Limit(Int)(50ppm-175ppm): ').place(x=30,y=205)
-        update_dict('VOO_URL',VOO_URL1)
-
+        
+        
         VOO_VA1 = VOO_VA.get()
         VA_value = tk.Entry(window_mode_voo, textvariable = VOO_VA, font=('Arial',12))
         VA_value.place(x=280,y=235)
         tk.Label(window_mode_voo, text='Ventricular Amplitude(Float)(3.5V-7.0V): ').place(x=30,y=235)
-        update_dict('VOO_VA',VOO_VA1)
+        
 
         VOO_VPW1 = VOO_VPW.get()
         VPW_value = tk.Entry(window_mode_voo, textvariable = VOO_VPW, font=('Arial',12))
         VPW_value.place(x=280,y=265)
         tk.Label(window_mode_voo, text='Ventricular Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=265)
+        
+
+        VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO_Compare)
+        VOO_Com.place(x=50,y=300)
+
+    def M_VOO_Compare():
+        update_dict('VOO_LRL',VOO_LRL1)
+        update_dict('VOO_URL',VOO_URL1)
+        update_dict('VOO_VA',VOO_VA1)
         update_dict('VOO_VPW',VOO_VPW1)
 
-        VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO)
-        VOO_Com.place(x=50,y=300)
-        if VOO_LRL1 == 0:
-            print('1')
-        else :
-            if VOO_LRL1<30 or VOO_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL out of range!')
-            elif VOO_URL1<50 or VOO_URL1>175:
-                tkinter.messagebox.showerror('Error','URL out of range!')
-            elif VOO_VA1<3.5 or VOO_VA1>7:
-                tkinter.messagebox.showerror('Error','VA out of range!')
-            elif VOO_VPW1<1 or VOO_VPW1>10:
-                tkinter.messagebox.showerror('Error','VPW out of range!')
+        if (not(30<VOO_LRL1<175)):
+            tkinter.messagebox.showerror('Error','LRL out of range!')
+        elif (not(50<VOO_URL1<175)):
+            tkinter.messagebox.showerror('Error','URL out of range!')
+        elif (not(3.5<VOO_VA1<7)):
+            tkinter.messagebox.showerror('Error','VA out of range!')
+        elif (not(1<VOO_VPW1<10)):
+            tkinter.messagebox.showerror('Error','VPW out of range!')
+        else:
+            tkinter.messagebox.showinfo('Values saved!')
+            
+            
+            
+        
+    
 
 
     def M_AOO():
@@ -907,9 +920,6 @@ def Button(window,var_connect):
                 tkinter.messagebox.showerror('Error', 'RF is out of range')
             elif VOOR_RecT1<2 or VOOR_RecT1>16:
                 tkinter.messagebox.showerror('Error', 'RecT is out of range')
-        
-
-
 
 
 
@@ -1142,37 +1152,36 @@ def Button(window,var_connect):
 
 
 
-    AOO_Bu = tk.Button(window_mode_selection, text='AOO_Bu', command= M_AOO )
+    AOO_Bu = tk.Button(window_mode_selection, text='AOO_Bu', command= M_AOO)
     AOO_Bu.place(x=120,y=240)
     
-    
-    VOO_Bu = tk.Button(window_mode_selection, text='VOO_Bu',command= M_VOO )
+    VOO_Bu = tk.Button(window_mode_selection, text='VOO_Bu',command= M_VOO)
     VOO_Bu.place(x=200,y=240)
     
-
-    AAI_Bu = tk.Button(window_mode_selection, text='AAI_Bu', command= M_AAI )
+    AAI_Bu = tk.Button(window_mode_selection, text='AAI_Bu', command= M_AAI)
     AAI_Bu.place(x=280,y=240)
 
-
-    VVI_Bu = tk.Button(window_mode_selection, text='VVI_Bu',command= M_VVI )
+    VVI_Bu = tk.Button(window_mode_selection, text='VVI_Bu',command= M_VVI)
     VVI_Bu.place(x=360,y=240)
 
-    DOO_Bu = tk.Button(window_mode_selection, text='DOO_Bu',command= M_DOO )
+    DOO_Bu = tk.Button(window_mode_selection, text='DOO_Bu',command= M_DOO)
     DOO_Bu.place(x=440,y=240)
 
-    AOOR_Bu = tk.Button(window_mode_selection, text='AOOR_Bu',command= M_AOOR )
+    AOOR_Bu = tk.Button(window_mode_selection, text='AOOR_Bu',command= M_AOOR)
     AOOR_Bu.place(x=120,y=280)
 
-    AAIR_Bu = tk.Button(window_mode_selection, text='AAIR_Bu',command= M_AAIR )
+    AAIR_Bu = tk.Button(window_mode_selection, text='AAIR_Bu',command= M_AAIR)
     AAIR_Bu.place(x=200,y=280)
         
-    VOOR_Bu = tk.Button(window_mode_selection, text='VOOR_Bu',command= M_VOOR )
+    VOOR_Bu = tk.Button(window_mode_selection, text='VOOR_Bu',command= M_VOOR)
     VOOR_Bu.place(x=280,y=280)
             
-    VVIR_Bu = tk.Button(window_mode_selection, text='VVIR_Bu',command= M_VVIR )
+    VVIR_Bu = tk.Button(window_mode_selection, text='VVIR_Bu',command= M_VVIR)
     VVIR_Bu.place(x=360,y=280)
 
-    DOOR_Bu = tk.Button(window_mode_selection, text='DOOR_Bu',command= M_DOOR )
+    DOOR_Bu = tk.Button(window_mode_selection, text='DOOR_Bu',command= M_DOOR)
     DOOR_Bu.place(x=440,y=280)
+
+
 
 
