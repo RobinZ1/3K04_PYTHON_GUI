@@ -351,7 +351,9 @@ DOOR_AA = tk.DoubleVar()
 global DOOR_APW1
 DOOR_APW1 = -1
 DOOR_APW = tk.DoubleVar()
+global data_dict
 
+global usrLimit
 def update_dict(string, value):
     string = string
     value = value
@@ -371,11 +373,9 @@ def ini_file():
     
     with open('test_data.txt','w') as json_file:
         json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
-
+ini_file()
 #Initializing the data_dict (IMPORTANT) AND USER LIMITS
-global data_dict
 
-global usrLimit
 def Button():
        
     window_mode_selection = tk.Toplevel()
@@ -483,16 +483,20 @@ def Button():
         if AAI_LRL1 == 0:
             print('1')
         else :
+            
             if AAI_LRL1<30 or AAI_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL out of range!')
+                tkinter.messagebox.showerror('Error','LRL out of range!',parent=window_mode_aai)
             elif AAI_URL1<50 or AAI_URL1>175:
-                tkinter.messagebox.showerror('Error','URL out of range!')
+                tkinter.messagebox.showerror('Error','URL out of range!',parent=window_mode_aai)
             elif AAI_AA1<3.5 or AAI_AA1>7:
-                tkinter.messagebox.showerror('Error','AA out of range!')
+                tkinter.messagebox.showerror('Error','AA out of range!',parent=window_mode_aai)
             elif AAI_APW1<1 or AAI_APW1>10:
-                tkinter.messagebox.showerror('Error','APW out of range!')
+                tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aai)
             elif AAI_ARP1<150 or AAI_ARP1>500:
-                tkinter.messagebox.showerror('Error','ARP out of range!')
+                tkinter.messagebox.showerror('Error','ARP out of range!',parent=window_mode_aai)
+            else:
+                tkinter.messagebox.showinfo('Passed','Data Saved!',parent=window_mode_aai)
+            window_mode_aai.destroy()
 
 
     def M_VOO():
@@ -500,10 +504,9 @@ def Button():
         window_mode_voo.geometry('500x500')
         window_mode_voo.title('VOO is selected!')
     
-        
+        VOO_LRL1 = VOO_LRL.get()
         LRL_value = tk.Entry(window_mode_voo, textvariable = VOO_LRL, font=('Arial',12))
         LRL_value.place(x=280,y=175)
-        VOO_LRL1 = VOO_LRL.get()
         tk.Label(window_mode_voo, text='Lower Rate Limit(Int)(30ppm-175ppm): ').place(x=30,y=175)
         update_dict('VOO_LRL',VOO_LRL1)
         
@@ -535,21 +538,13 @@ def Button():
                 tkinter.messagebox.showerror('Error','URL out of range!')
             elif (not(3.5<VOO_VA1<7)):
                 tkinter.messagebox.showerror('Error','VA out of range!')
-            elif (not(1<VOO_VPW1<10)):
+            elif (not(0.1<VOO_VPW1<1.9)):
                 tkinter.messagebox.showerror('Error','VPW out of range!')
             else:
                 tkinter.messagebox.showinfo('Passed','Values saved!')
         VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO_compare)
         VOO_Com.place(x=50,y=300)
 
-    
-      
-        
-            
-            
-            
-        
-    
 
 
     def M_AOO():
