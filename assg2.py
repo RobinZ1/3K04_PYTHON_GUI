@@ -353,6 +353,7 @@ DOOR_APW1 = -1
 DOOR_APW = tk.DoubleVar()
 global data_dict
 
+
 global usrLimit
 def update_dict(string, value):
     string = string
@@ -500,7 +501,7 @@ def Button():
 
 
     def M_VOO():
-        window_mode_voo = tk.Toplevel(window_mode_selection)
+        window_mode_voo = tk.Toplevel(window)
         window_mode_voo.geometry('500x500')
         window_mode_voo.title('VOO is selected!')
     
@@ -529,21 +530,32 @@ def Button():
         VPW_value.place(x=280,y=265)
         tk.Label(window_mode_voo, text='Ventricular Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=265)
         update_dict('VOO_VPW',VOO_VPW1)
-
-        def M_VOO_compare():
-            update_dict('VOO_LRL',VOO_LRL1)
-            if (not(30<VOO_LRL1<175)):
-                tkinter.messagebox.showerror('Error','LRL out of range!')
-            elif (not(50<VOO_URL1<175)):
-                tkinter.messagebox.showerror('Error','URL out of range!')
-            elif (not(3.5<VOO_VA1<7)):
-                tkinter.messagebox.showerror('Error','VA out of range!')
-            elif (not(0.1<VOO_VPW1<1.9)):
-                tkinter.messagebox.showerror('Error','VPW out of range!')
-            else:
-                tkinter.messagebox.showinfo('Passed','Values saved!')
-        VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO_compare)
+        VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO)
         VOO_Com.place(x=50,y=300)
+        
+
+        if VOO_LRL1 == 0:
+            pass
+        else:
+            if VOO_LRL1<30 or VOO_LRL1>175:
+                tkinter.messagebox.showerror('Error','LRL out of range!',parent=window_mode_voo)
+                
+            elif VOO_URL1<50 or VOO_URL1>175:
+                tkinter.messagebox.showerror('Error','URL out of range!',parent=window_mode_voo)
+                
+            elif VOO_VA1<3.5 or VOO_VA1>7:
+                tkinter.messagebox.showerror('Error','VA out of range!',parent=window_mode_voo)
+                
+            elif VOO_VPW1<0.1 or VOO_VPW1>1.9:
+                tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_voo)
+                
+
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
+            window_mode_voo.destroy()
+  
+     
+
 
 
 
