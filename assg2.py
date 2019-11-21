@@ -10,6 +10,7 @@ status = window
 window.title('Welcome to 3K04!')
 window.geometry('400x300')
 
+
 # welcome page
 canvas = tk.Canvas(window, width=400, height=135, bg='green')
 image_file = tk.PhotoImage(file='3K04.gif')
@@ -356,6 +357,7 @@ DOOR_AA = tk.DoubleVar()
 global DOOR_APW1
 DOOR_APW1 = -1
 DOOR_APW = tk.DoubleVar()
+
 global data_dict
 
 
@@ -383,20 +385,23 @@ ini_file()
 #Initializing the data_dict (IMPORTANT) AND USER LIMITS
 
 def Button():
+
+    
+    
        
     window_mode_selection = tk.Toplevel()
-    window_mode_selection.geometry('600x500')
+    window_mode_selection.geometry('600x300')
     window_mode_selection.title('Mode Selection')
    
     print(var_connect[0])
     if var_connect[0] == 1:
-        tk.Label(window_mode_selection, text='Device is connecting',font=('Arial',12)).place(x=200,y=100)
+        tk.Label(window_mode_selection, text='Device is connected',font=('Arial',12)).place(x=200,y=260)
     else :
-        tk.Label(window_mode_selection, text='Device is disconnecting',font=('Arial',12)).place(x=200,y=100)
+        tk.Label(window_mode_selection, text='Device is disconnected',font=('Arial',12)).place(x=200,y=260)
         
     def M_VVI():
         window_mode_vvi = tk.Toplevel(window)
-        window_mode_vvi.geometry('500x500')
+        window_mode_vvi.geometry('500x600')
         window_mode_vvi.title('VVI is selected!')
 
         VVI_LRL1 = VVI_LRL.get()
@@ -1226,45 +1231,49 @@ def Button():
 
 
 
+    #Scrollbar
+    scrollbar = tk.Scrollbar(window_mode_selection)
+    scrollbar.pack(side=tk.RIGHT, fill= tk.BOTH)
 
+    listbox = tk.Listbox(window_mode_selection, width = 60)
+    listbox.pack()
 
+    for i in range(50):
+        listbox.insert(tk.END, )
 
-
-
-
-
-
+    listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=listbox.yview)
 
 
     AOO_Bu = tk.Button(window_mode_selection, text='AOO_Bu', command= M_AOO)
-    AOO_Bu.place(x=120,y=240)
+    AOO_Bu.place(x=120,y=180)
     
     VOO_Bu = tk.Button(window_mode_selection, text='VOO_Bu',command= M_VOO)
-    VOO_Bu.place(x=200,y=240)
+    VOO_Bu.place(x=200,y=180)
     
     AAI_Bu = tk.Button(window_mode_selection, text='AAI_Bu', command= M_AAI)
-    AAI_Bu.place(x=280,y=240)
+    AAI_Bu.place(x=280,y=180)
 
     VVI_Bu = tk.Button(window_mode_selection, text='VVI_Bu',command= M_VVI)
-    VVI_Bu.place(x=360,y=240)
+    VVI_Bu.place(x=360,y=180)
 
     DOO_Bu = tk.Button(window_mode_selection, text='DOO_Bu',command= M_DOO)
-    DOO_Bu.place(x=440,y=240)
+    DOO_Bu.place(x=440,y=180)
 
     AOOR_Bu = tk.Button(window_mode_selection, text='AOOR_Bu',command= M_AOOR)
-    AOOR_Bu.place(x=120,y=280)
+    AOOR_Bu.place(x=120,y=220)
 
     AAIR_Bu = tk.Button(window_mode_selection, text='AAIR_Bu',command= M_AAIR)
-    AAIR_Bu.place(x=200,y=280)
+    AAIR_Bu.place(x=200,y=220)
         
     VOOR_Bu = tk.Button(window_mode_selection, text='VOOR_Bu',command= M_VOOR)
-    VOOR_Bu.place(x=280,y=280)
+    VOOR_Bu.place(x=280,y=220)
             
     VVIR_Bu = tk.Button(window_mode_selection, text='VVIR_Bu',command= M_VVIR)
-    VVIR_Bu.place(x=360,y=280)
+    VVIR_Bu.place(x=360,y=220)
 
     DOOR_Bu = tk.Button(window_mode_selection, text='DOOR_Bu',command= M_DOOR)
-    DOOR_Bu.place(x=440,y=280)
+    DOOR_Bu.place(x=440,y=220)
 
 class LoginPage:
     
