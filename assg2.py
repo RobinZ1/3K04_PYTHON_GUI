@@ -351,11 +351,10 @@ DOOR_AA = tk.DoubleVar()
 global DOOR_APW1
 DOOR_APW1 = -1
 DOOR_APW = tk.DoubleVar()
+global data_dict
 
 
-
-
-
+global usrLimit
 def update_dict(string, value):
     string = string
     value = value
@@ -377,9 +376,7 @@ def ini_file():
         json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
 ini_file()
 #Initializing the data_dict (IMPORTANT) AND USER LIMITS
-global data_dict
 
-global usrLimit
 def Button():
        
     window_mode_selection = tk.Toplevel()
@@ -488,16 +485,20 @@ def Button():
         if AAI_LRL1 == 0:
             print('1')
         else :
+            
             if AAI_LRL1<30 or AAI_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL out of range!')
+                tkinter.messagebox.showerror('Error','LRL out of range!',parent=window_mode_aai)
             elif AAI_URL1<50 or AAI_URL1>175:
-                tkinter.messagebox.showerror('Error','URL out of range!')
+                tkinter.messagebox.showerror('Error','URL out of range!',parent=window_mode_aai)
             elif AAI_AA1<3.5 or AAI_AA1>7:
-                tkinter.messagebox.showerror('Error','AA out of range!')
+                tkinter.messagebox.showerror('Error','AA out of range!',parent=window_mode_aai)
             elif AAI_APW1<1 or AAI_APW1>10:
-                tkinter.messagebox.showerror('Error','APW out of range!')
+                tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aai)
             elif AAI_ARP1<150 or AAI_ARP1>500:
-                tkinter.messagebox.showerror('Error','ARP out of range!')
+                tkinter.messagebox.showerror('Error','ARP out of range!',parent=window_mode_aai)
+            else:
+                tkinter.messagebox.showinfo('Passed','Data Saved!',parent=window_mode_aai)
+            window_mode_aai.destroy()
 
 
     def M_VOO():
@@ -549,18 +550,14 @@ def Button():
             elif VOO_VPW1<0.1 or VOO_VPW1>1.9:
                 tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_voo)
                 
+
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
             window_mode_voo.destroy()
   
      
 
-        
-      
-            
-            
-        
-    
+
 
 
     def M_AOO():
