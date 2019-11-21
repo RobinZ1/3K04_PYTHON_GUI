@@ -557,18 +557,19 @@ def Button():
             Button()
 
     def M_VOO():
+
         window_mode_voo = tk.Toplevel(window)
         window_mode_voo.geometry('500x500')
         window_mode_voo.title('VOO is selected!')
+
     
         VOO_LRL1 = VOO_LRL.get()
         LRL_value = tk.Entry(window_mode_voo, textvariable = VOO_LRL, font=('Arial',12))
         LRL_value.place(x=280,y=175)
         tk.Label(window_mode_voo, text='Lower Rate Limit(Int)(30ppm-175ppm): ').place(x=30,y=175)
         update_dict('VOO_LRL',VOO_LRL1)
-        
-        
 
+    
         VOO_URL1 = VOO_URL.get()
         URL_value = tk.Entry(window_mode_voo, textvariable = VOO_URL, font=('Arial',12))
         URL_value.place(x=280,y=205)
@@ -586,11 +587,11 @@ def Button():
         VPW_value.place(x=280,y=265)
         tk.Label(window_mode_voo, text='Ventricular Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=265)
         update_dict('VOO_VPW',VOO_VPW1)
+
         VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO)
         VOO_Com.place(x=50,y=300)
         
-
-        if VOO_LRL1 == 0:
+        if (VOO_LRL1 == 0):
             pass
         else:
             if VOO_LRL1<30 or VOO_LRL1>175:
@@ -605,13 +606,14 @@ def Button():
             elif VOO_VPW1<0.1 or VOO_VPW1>1.9:
                 tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_voo)
                 
-
             else:
-                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
                 data_scroll()
                 Button()
                 window_mode_voo.destroy()
                 window_mode_selection.destroy()
+        
+
+        
 
         
 
