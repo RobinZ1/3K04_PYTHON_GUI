@@ -612,10 +612,14 @@ class Mode:
                     
                 elif VOO_VPW1<0.1 or VOO_VPW1>1.9:
                     tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_voo)
+
                 data_scroll()
                 Button()
                 window_mode_voo.destroy()
                 window_mode_selection.destroy()
+        
+
+        
 
         
 
@@ -850,7 +854,11 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'RecT is out of range!',parent=window_mode_aoor)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoor)
+                data_scroll()
+                Button()
                 window_mode_aoor.destroy()
+                window_mode_selection.destroy()
+        
 
         def M_AAIR():
             window_mode_aair = tk.Toplevel(window)
@@ -963,7 +971,11 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'PVARP is out of range',parent=window_mode_aair)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aair)
+                data_scroll()
+                Button()
                 window_mode_aair.destroy()
+                window_mode_selection.destroy()
+        
 
 
             #VOOR
@@ -1052,7 +1064,11 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'RecT is out of range',parent=window_mode_VOOR)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VOOR)
+                data_scroll()
+                Button()
                 window_mode_VOOR.destroy()
+                window_mode_selection.destroy()
+        
 
 
 
@@ -1156,7 +1172,11 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'VRP is out of range',parent=window_mode_VVIR)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VVIR)
+                data_scroll()
+                Button()
                 window_mode_VVIR.destroy()
+                window_mode_selection.destroy()
+        
             
             
 
@@ -1268,7 +1288,11 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'APW is out of range',parent=window_mode_DOOR)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_DOOR)
+                data_scroll()
+                Button()
                 window_mode_DOOR.destroy()
+                window_mode_selection.destroy()
+        
 
 
 
