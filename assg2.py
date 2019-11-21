@@ -109,7 +109,6 @@ global AAI_ARP1
 AAI_ARP1 = -1
 AAI_ARP = tk.DoubleVar()
 
-
 global AOOR_LRL1
 AOOR_LRL1 = -1
 AOOR_LRL = tk.DoubleVar()
@@ -145,7 +144,6 @@ AOOR_RF = tk.DoubleVar()
 global AOOR_RecT1
 AOOR_RecT1 = -1
 AOOR_RecT = tk.DoubleVar()
-
 
 global DOO_LRL1
 DOO_LRL1 = -1
@@ -222,7 +220,6 @@ AAIR_ARP = tk.DoubleVar()
 global AAIR_PVARP1
 AAIR_PVARP1 = -1
 AAIR_PVARP = tk.DoubleVar()
-
 
 global VOOR_LRL1
 VOOR_LRL1 = -1
