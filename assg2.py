@@ -386,13 +386,35 @@ ini_file()
 
 def Button():
 
-    
-    
-       
     window_mode_selection = tk.Toplevel()
     window_mode_selection.geometry('600x300')
     window_mode_selection.title('Mode Selection')
-   
+
+
+
+    #Scrollbar
+    def data_scroll():
+        
+        scrollbar = tk.Scrollbar(window_mode_selection)
+        scrollbar.pack(side=tk.RIGHT, fill= tk.BOTH)
+
+        listbox = tk.Listbox(window_mode_selection, width = 60)
+        listbox.pack()
+
+        with open('test_data.txt','r') as json_file:
+            data_dict = json.load(json_file)
+            
+        for key, value in data_dict.items():
+            listbox.insert(tk.END, (key, value))
+
+        with open('test_data.txt','w') as json_file:
+            json.dump(data_dict, json_file)
+
+        listbox.config(yscrollcommand=scrollbar.set)
+        scrollbar.config(command=listbox.yview)
+
+        
+
     print(var_connect[0])
     if var_connect[0] == 1:
         tk.Label(window_mode_selection, text='Device is connected',font=('Arial',12)).place(x=200,y=260)
@@ -459,7 +481,10 @@ def Button():
                 tkinter.messagebox.showerror('Error','VS out of range!',parent=window_mode_vvi)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_vvi)
+            data_scroll()
             window_mode_vvi.destroy()
+            window_mode_selection.destroy()
+            Button()
 
 
 
@@ -526,8 +551,10 @@ def Button():
                 tkinter.messagebox.showerror('Error','AS out of range!',parent=window_mode_aai)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aai)
+            data_scroll()
             window_mode_aai.destroy()
-
+            window_mode_selection.destroy()
+            Button()
 
     def M_VOO():
         window_mode_voo = tk.Toplevel(window)
@@ -561,7 +588,6 @@ def Button():
         update_dict('VOO_VPW',VOO_VPW1)
         VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO)
         VOO_Com.place(x=50,y=300)
-        
 
         if VOO_LRL1 == 0:
             pass
@@ -581,7 +607,10 @@ def Button():
 
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
+            data_scroll()
             window_mode_voo.destroy()
+            window_mode_selection.destroy()
+            Button()
   
      
 
@@ -634,7 +663,10 @@ def Button():
                 tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aoo)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoo)
-            window_mode_aoo.destroy();
+            data_scroll()
+            window_mode_aoo.destroy()
+            window_mode_selection.destroy()
+            Button()
 
 
 
@@ -715,7 +747,10 @@ def Button():
                 tkinter.messagebox.showerror('Error','VPW is out of range!',parent=window_mode_doo)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_doo)
+            data_scroll()
             window_mode_doo.destroy()
+            window_mode_selection.destroy()
+            Button()
             
 
     def M_AOOR():
@@ -802,7 +837,10 @@ def Button():
                 tkinter.messagebox.showerror('Error', 'RecT is out of range!',parent=window_mode_aoor)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoor)
+            data_scroll()
             window_mode_aoor.destroy()
+            window_mode_selection.destroy()
+            Button()
 
     def M_AAIR():
         window_mode_aair = tk.Toplevel(window)
@@ -915,7 +953,10 @@ def Button():
                 tkinter.messagebox.showerror('Error', 'PVARP is out of range',parent=window_mode_aair)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aair)
+            data_scroll()
             window_mode_aair.destroy()
+            window_mode_selection.destroy()
+            Button()
 
 
         #VOOR
@@ -1004,7 +1045,10 @@ def Button():
                 tkinter.messagebox.showerror('Error', 'RecT is out of range',parent=window_mode_VOOR)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VOOR)
+            data_scroll()
             window_mode_VOOR.destroy()
+            window_mode_selection.destroy()
+            Button()
 
 
 
@@ -1108,7 +1152,10 @@ def Button():
                 tkinter.messagebox.showerror('Error', 'VRP is out of range',parent=window_mode_VVIR)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VVIR)
+            data_scroll()
             window_mode_VVIR.destroy()
+            window_mode_selection.destroy()
+            Button()
         
         
 
@@ -1220,29 +1267,12 @@ def Button():
                 tkinter.messagebox.showerror('Error', 'APW is out of range',parent=window_mode_DOOR)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_DOOR)
+            
+            data_scroll()
             window_mode_DOOR.destroy()
+            window_mode_selection.destroy()
+            Button()
             
-            
-
-
-
-
-
-
-
-
-    #Scrollbar
-    scrollbar = tk.Scrollbar(window_mode_selection)
-    scrollbar.pack(side=tk.RIGHT, fill= tk.BOTH)
-
-    listbox = tk.Listbox(window_mode_selection, width = 60)
-    listbox.pack()
-
-    for i in range(50):
-        listbox.insert(tk.END, )
-
-    listbox.config(yscrollcommand=scrollbar.set)
-    scrollbar.config(command=listbox.yview)
 
 
     AOO_Bu = tk.Button(window_mode_selection, text='AOO_Bu', command= M_AOO)
@@ -1274,6 +1304,13 @@ def Button():
 
     DOOR_Bu = tk.Button(window_mode_selection, text='DOOR_Bu',command= M_DOOR)
     DOOR_Bu.place(x=440,y=220)
+
+    data_scroll()
+    
+
+    
+
+
 
 class LoginPage:
     
