@@ -421,7 +421,7 @@ def Button():
         VVI_VRP1 = VVI_VRP.get()
         VRP_value = tk.Entry(window_mode_vvi, textvariable = VVI_VRP, font=('Arial',12))
         VRP_value.place(x=280,y=295)
-        tk.Label(window_mode_vvi, text='Ventricular Refractory Period(Int)(150ms-500ms): ').place(x=30,y=295)
+        tk.Label(window_mode_vvi, text='Ventricular Refractory Period(Int)(150-500ms): ').place(x=30,y=295)
         update_dict('VVI_VRP',VVI_VRP1)
 
         VVI_Com = tk.Button(window_mode_vvi, text='VVI_COMPARE', command=M_VVI)
@@ -430,16 +430,18 @@ def Button():
             print('1')
         else :
             if VVI_LRL1<30 or VVI_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL out of range!')
+                tkinter.messagebox.showerror('Error','LRL out of range!',parent=window_mode_vvi)
             elif VVI_URL1<50 or VVI_URL1>175:
-                tkinter.messagebox.showerror('Error','URL out of range!')
+                tkinter.messagebox.showerror('Error','URL out of range!',parent=window_mode_vvi)
             elif VVI_VA1<3.5 or VVI_VA1>7:
-                tkinter.messagebox.showerror('Error','VA out of range!')
-            elif VVI_VPW1<1 or VVI_VPW1>10:
-                tkinter.messagebox.showerror('Error','VPW out of range!')
+                tkinter.messagebox.showerror('Error','VA out of range!',parent=window_mode_vvi)
+            elif VVI_VPW1<0.1 or VVI_VPW1>1.9:
+                tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_vvi)
             elif VVI_VRP1<150 or VVI_VRP1>500:
-                tkinter.messagebox.showerror('Error','VRP out of range!')
-    
+                tkinter.messagebox.showerror('Error','VRP out of range!',parent=window_mode_vvi)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_vvi)
+            window_mode_vvi.destroy()
 
 
 
@@ -491,12 +493,12 @@ def Button():
                 tkinter.messagebox.showerror('Error','URL out of range!',parent=window_mode_aai)
             elif AAI_AA1<3.5 or AAI_AA1>7:
                 tkinter.messagebox.showerror('Error','AA out of range!',parent=window_mode_aai)
-            elif AAI_APW1<1 or AAI_APW1>10:
+            elif AAI_APW1<0.1 or AAI_APW1>1.9:
                 tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aai)
             elif AAI_ARP1<150 or AAI_ARP1>500:
                 tkinter.messagebox.showerror('Error','ARP out of range!',parent=window_mode_aai)
             else:
-                tkinter.messagebox.showinfo('Passed','Data Saved!',parent=window_mode_aai)
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aai)
             window_mode_aai.destroy()
 
 
@@ -596,14 +598,19 @@ def Button():
            print('1')
         else :
             if AOO_LRL1<30 or AOO_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL out of range!')
+                tkinter.messagebox.showerror('Error','LRL out of range!',parent=window_mode_aoo)
             elif AOO_URL1<50 or AOO_URL1>175:
-                tkinter.messagebox.showerror('Error','URL out of range!')
+                tkinter.messagebox.showerror('Error','URL out of range!',parent=window_mode_aoo)
             elif AOO_AA1<3.5 or AOO_AA1>7:
-                tkinter.messagebox.showerror('Error','AA out of range!')
-            elif AOO_APW1<1 or AOO_APW1>10:
-                tkinter.messagebox.showerror('Error','APW out of range!')
-    
+                tkinter.messagebox.showerror('Error','AA out of range!',parent=window_mode_aoo)
+            elif AOO_APW1<0.1 or AOO_APW1>1.9:
+                tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aoo)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoo)
+            window_mode_aoo.destroy();
+
+
+
 
     def M_DOO():
         window_mode_doo = tk.Toplevel(window)
@@ -666,19 +673,22 @@ def Button():
             print('1')
         else :
             if DOO_LRL1<30 or DOO_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL is out of range!')
+                tkinter.messagebox.showerror('Error','LRL is out of range!',parent=window_mode_doo)
             elif DOO_URL1<50 or DOO_URL1>175:
-                tkinter.messagebox.showerror('Error','URL is out of range!')
+                tkinter.messagebox.showerror('Error','URL is out of range!',parent=window_mode_doo)
             elif DOO_FAVD1<70 or DOO_FAVD1>300:
-                tkinter.messagebox.showerror('Error', 'FAVD is out of range')
+                tkinter.messagebox.showerror('Error', 'FAVD is out of range',parent=window_mode_doo)
             elif DOO_AA1<3.5 or DOO_AA1>7.0:
-                tkinter.messagebox.showerror('Error', 'AA is out of range')
+                tkinter.messagebox.showerror('Error', 'AA is out of range',parent=window_mode_doo)
             elif DOO_VA1<3.5 or DOO_VA1>7.0:
-                tkinter.messagebox.showerror('Error','VA is out of range!')
-            elif DOO_APW1<1 or DOO_APW1>10:
-                tkinter.messagebox.showerror('Error', 'APW is out of range')
-            elif DOO_VPW1<1 or DOO_VPW1>10:
-                tkinter.messagebox.showerror('Error','VPW is out of range!')
+                tkinter.messagebox.showerror('Error','VA is out of range!',parent=window_mode_doo)
+            elif DOO_APW1<0.1 or DOO_APW1>1.9:
+                tkinter.messagebox.showerror('Error', 'APW is out of range',parent=window_mode_doo)
+            elif DOO_VPW1<0.1 or DOO_VPW1>1.9:
+                tkinter.messagebox.showerror('Error','VPW is out of range!',parent=window_mode_doo)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_doo)
+            window_mode_doo.destroy()
             
 
     def M_AOOR():
@@ -748,22 +758,24 @@ def Button():
             print('1')
         else :
             if AOOR_LRL1<30 or AOOR_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL is out of range!')
+                tkinter.messagebox.showerror('Error','LRL is out of range!',parent=window_mode_aoor)
             elif AOOR_URL1<50 or AOOR_URL1>175:
-                tkinter.messagebox.showerror('Error','URL is out of range!')
+                tkinter.messagebox.showerror('Error','URL is out of range!',parent=window_mode_aoor)
             elif AOOR_MSR1<50 or AOOR_MSR1>175:
-                tkinter.messagebox.showerror('Error','MSR is out of range!')
+                tkinter.messagebox.showerror('Error','MSR is out of range!',parent=window_mode_aoor)
             elif AOOR_AA1<3.5 or AOOR_AA1>7.0:
-                tkinter.messagebox.showerror('Error', 'AA is out of range!')
+                tkinter.messagebox.showerror('Error', 'AA is out of range!',parent=window_mode_aoor)
             elif AOOR_APW1<0.1 or AOOR_APW1>1.9:
-                tkinter.messagebox.showerror('Error', 'APW is out of range!')
+                tkinter.messagebox.showerror('Error', 'APW is out of range!',parent=window_mode_aoor)
             elif AOOR_ReaT1<10 or AOOR_ReaT1>50:
-                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+                tkinter.messagebox.showerror('Error','ReaT is out of range!',parent=window_mode_aoor)
             elif AOOR_RF1<1 or AOOR_RF1>16:
-                tkinter.messagebox.showerror('Error', 'RF is out of range!')
+                tkinter.messagebox.showerror('Error', 'RF is out of range!',parent=window_mode_aoor)
             elif AOOR_RecT1<2 or AOOR_RecT1>16:
-                tkinter.messagebox.showerror('Error', 'RecT is out of range!')
-
+                tkinter.messagebox.showerror('Error', 'RecT is out of range!',parent=window_mode_aoor)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoor)
+            window_mode_aoor.destroy()
 
     def M_AAIR():
         window_mode_aair = tk.Toplevel(window)
@@ -853,28 +865,30 @@ def Button():
             print('1')
         else :
             if AAIR_LRL1<30 or AAIR_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL is out of range!')
+                tkinter.messagebox.showerror('Error','LRL is out of range!',parent=window_mode_aair)
             elif AAIR_URL1<50 or AAIR_URL1>175:
-                tkinter.messagebox.showerror('Error','URL is out of range!')
+                tkinter.messagebox.showerror('Error','URL is out of range!',parent=window_mode_aair)
             elif AAIR_MSR1<50 or AAIR_MSR1>175:
-                tkinter.messagebox.showerror('Error','MSR is out of range!')
+                tkinter.messagebox.showerror('Error','MSR is out of range!',parent=window_mode_aair)
             elif AAIR_AA1<3.5 or AAIR_AA1>7.0:
-                tkinter.messagebox.showerror('Error', 'AA is out of range')
+                tkinter.messagebox.showerror('Error', 'AA is out of range',parent=window_mode_aair)
             elif AAIR_APW1<0.1 or AAIR_APW1>1.9:
-                tkinter.messagebox.showerror('Error', 'APW is out of range')
+                tkinter.messagebox.showerror('Error', 'APW is out of range',parent=window_mode_aair)
             elif AAIR_ReaT1<10 or AAIR_ReaT1>50:
-                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+                tkinter.messagebox.showerror('Error','ReaT is out of range!',parent=window_mode_aair)
             elif AAIR_RF1<1 or AAIR_RF1>16:
-                tkinter.messagebox.showerror('Error', 'RF is out of range')
+                tkinter.messagebox.showerror('Error', 'RF is out of range',parent=window_mode_aair)
             elif AAIR_RecT1<2 or AAIR_RecT1>16:
-                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+                tkinter.messagebox.showerror('Error', 'RecT is out of range',parent=window_mode_aair)
             elif AAIR_AS1<1 or AAIR_AS1>10:
-                tkinter.messagebox.showerror('Error', 'AS is out of range')
+                tkinter.messagebox.showerror('Error', 'AS is out of range',parent=window_mode_aair)
             elif AAIR_ARP1<150 or AAIR_ARP1>500:
-                tkinter.messagebox.showerror('Error', 'ARP is out of range')
+                tkinter.messagebox.showerror('Error', 'ARP is out of range',parent=window_mode_aair)
             elif AAIR_PVARP1<150 or AAIR_PVARP1>500:
-                tkinter.messagebox.showerror('Error', 'PVARP is out of range')
-
+                tkinter.messagebox.showerror('Error', 'PVARP is out of range',parent=window_mode_aair)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aair)
+            window_mode_aair.destroy()
 
 
         #VOOR
@@ -946,21 +960,24 @@ def Button():
             print('1')
         else :
             if VOOR_LRL1<30 or VOOR_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL is out of range!')
+                tkinter.messagebox.showerror('Error','LRL is out of range!',parent=window_mode_VOOR)
             elif VOOR_URL1<50 or VOOR_URL1>175:
-                tkinter.messagebox.showerror('Error','URL is out of range!')
+                tkinter.messagebox.showerror('Error','URL is out of range!',parent=window_mode_VOOR)
             elif VOOR_MSR1<50 or VOOR_MSR1>175:
-                tkinter.messagebox.showerror('Error','MSR is out of range!')
+                tkinter.messagebox.showerror('Error','MSR is out of range!',parent=window_mode_VOOR)
             elif VOOR_VA1<3.5 or VOOR_VA1>7.0:
-                tkinter.messagebox.showerror('Error', 'VA is out of range')
+                tkinter.messagebox.showerror('Error', 'VA is out of range',parent=window_mode_VOOR)
             elif VOOR_VPW1<0.1 or VOOR_VPW1>1.9:
-                tkinter.messagebox.showerror('Error', 'VPW is out of range')
+                tkinter.messagebox.showerror('Error', 'VPW is out of range',parent=window_mode_VOOR)
             elif VOOR_ReaT1<10 or VOOR_ReaT1>50:
-                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+                tkinter.messagebox.showerror('Error','ReaT is out of range!',parent=window_mode_VOOR)
             elif VOOR_RF1<1 or VOOR_RF1>16:
-                tkinter.messagebox.showerror('Error', 'RF is out of range')
+                tkinter.messagebox.showerror('Error', 'RF is out of range',parent=window_mode_VOOR)
             elif VOOR_RecT1<2 or VOOR_RecT1>16:
-                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+                tkinter.messagebox.showerror('Error', 'RecT is out of range',parent=window_mode_VOOR)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VOOR)
+            window_mode_VOOR.destroy()
 
 
 
@@ -1034,7 +1051,7 @@ def Button():
         VVIR_VRP1 = VVIR_VRP.get()
         VRP_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VRP, font=('Arial',12))
         VRP_value.place(x=280,y=480)
-        tk.Label(window_mode_VVIR, text='Ventricular Refractory Period(Int)(150ms-500ms): ').place(x=30,y=480)
+        tk.Label(window_mode_VVIR, text='Ventricular Refractory Period(Int)(150-500ms): ').place(x=30,y=480)
         update_dict('VVIR_VRP',VVIR_VRP1)
 
         VVIR_Com = tk.Button(window_mode_VVIR, text='VVIR_COMPARE', command=M_VVIR)
@@ -1043,26 +1060,28 @@ def Button():
             print('1')
         else :
             if VVIR_LRL1<30 or VVIR_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL is out of range!')
+                tkinter.messagebox.showerror('Error','LRL is out of range!',parent=window_mode_VVIR)
             elif VVIR_URL1<50 or VVIR_URL1>175:
-                tkinter.messagebox.showerror('Error','URL is out of range!')
+                tkinter.messagebox.showerror('Error','URL is out of range!',parent=window_mode_VVIR)
             elif VVIR_MSR1<50 or VVIR_MSR1>175:
-                tkinter.messagebox.showerror('Error','MSR is out of range!')
+                tkinter.messagebox.showerror('Error','MSR is out of range!',parent=window_mode_VVIR)
             elif VVIR_VA1<3.5 or VVIR_VA1>7.0:
-                tkinter.messagebox.showerror('Error', 'VA is out of range')
+                tkinter.messagebox.showerror('Error', 'VA is out of range',parent=window_mode_VVIR)
             elif VVIR_VPW1<0.1 or VVIR_VPW1>1.9:
-                tkinter.messagebox.showerror('Error', 'VPW is out of range')
+                tkinter.messagebox.showerror('Error', 'VPW is out of range',parent=window_mode_VVIR)
             elif VVIR_ReaT1<10 or VVIR_ReaT1>50:
-                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+                tkinter.messagebox.showerror('Error','ReaT is out of range!',parent=window_mode_VVIR)
             elif VVIR_RF1<1 or VVIR_RF1>16:
-                tkinter.messagebox.showerror('Error', 'RF is out of range')
+                tkinter.messagebox.showerror('Error', 'RF is out of range',parent=window_mode_VVIR)
             elif VVIR_RecT1<2 or VVIR_RecT1>16:
-                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+                tkinter.messagebox.showerror('Error', 'RecT is out of range',parent=window_mode_VVIR)
             elif VVIR_VS1<1 or VVIR_VS1>10:
-                tkinter.messagebox.showerror('Error', 'VS is out of range')
+                tkinter.messagebox.showerror('Error', 'VS is out of range',parent=window_mode_VVIR)
             elif VVIR_VRP1<150 or VVIR_VRP1>500:
-                tkinter.messagebox.showerror('Error', 'VRP is out of range')
-            
+                tkinter.messagebox.showerror('Error', 'VRP is out of range',parent=window_mode_VVIR)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VVIR)
+            window_mode_VVIR.destroy()
         
         
 
@@ -1151,28 +1170,30 @@ def Button():
             print('1')
         else :
             if DOOR_LRL1<30 or DOOR_LRL1>175:
-                tkinter.messagebox.showerror('Error','LRL is out of range!')
+                tkinter.messagebox.showerror('Error','LRL is out of range!',parent=window_mode_DOOR)
             elif DOOR_URL1<50 or DOOR_URL1>175:
-                tkinter.messagebox.showerror('Error','URL is out of range!')
+                tkinter.messagebox.showerror('Error','URL is out of range!',parent=window_mode_DOOR)
             elif DOOR_MSR1<50 or DOOR_MSR1>175:
-                tkinter.messagebox.showerror('Error','MSR is out of range!')
+                tkinter.messagebox.showerror('Error','MSR is out of range!',parent=window_mode_DOOR)
             elif DOOR_VA1<3.5 or DOOR_VA1>7.0:
-                tkinter.messagebox.showerror('Error', 'VA is out of range')
+                tkinter.messagebox.showerror('Error', 'VA is out of range',parent=window_mode_DOOR)
             elif DOOR_VPW1<0.1 or DOOR_VPW1>1.9:
-                tkinter.messagebox.showerror('Error', 'VPW is out of range')
+                tkinter.messagebox.showerror('Error', 'VPW is out of range',parent=window_mode_DOOR)
             elif DOOR_ReaT1<10 or DOOR_ReaT1>50:
-                tkinter.messagebox.showerror('Error','ReaT is out of range!')
+                tkinter.messagebox.showerror('Error','ReaT is out of range!',parent=window_mode_DOOR)
             elif DOOR_RF1<1 or DOOR_RF1>16:
-                tkinter.messagebox.showerror('Error', 'RF is out of range')
+                tkinter.messagebox.showerror('Error', 'RF is out of range',parent=window_mode_DOOR)
             elif DOOR_RecT1<2 or DOOR_RecT1>16:
-                tkinter.messagebox.showerror('Error', 'RecT is out of range')
+                tkinter.messagebox.showerror('Error', 'RecT is out of range',parent=window_mode_DOOR)
             elif DOOR_FAVD1<70 or DOOR_FAVD1>300:
-                tkinter.messagebox.showerror('Error', 'FAVD is out of range')
+                tkinter.messagebox.showerror('Error', 'FAVD is out of range',parent=window_mode_DOOR)
             elif DOOR_AA1<3.5 or DOOR_AA1>7.0:
-                tkinter.messagebox.showerror('Error', 'AA is out of range')
+                tkinter.messagebox.showerror('Error', 'AA is out of range',parent=window_mode_DOOR)
             elif DOOR_APW1<0.1 or DOOR_APW1>1.9:
-                tkinter.messagebox.showerror('Error', 'APW is out of range')
-            
+                tkinter.messagebox.showerror('Error', 'APW is out of range',parent=window_mode_DOOR)
+            else:
+                tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_DOOR)
+            window_mode_DOOR.destroy()
             
             
 
