@@ -88,6 +88,10 @@ global VVI_VRP1
 VVI_VRP1 = -1
 VVI_VRP = tk.DoubleVar()
 
+global VVI_VS1
+VVI_VS1 = -1
+VVI_VS = tk.DoubleVar()
+
 #AAI
 global AAI_LRL1
 AAI_LRL1 = -1
@@ -108,6 +112,10 @@ AAI_APW = tk.DoubleVar()
 global AAI_ARP1
 AAI_ARP1 = -1
 AAI_ARP = tk.DoubleVar()
+
+global AAI_AS1
+AAI_AS1 = -1
+AAI_AS = tk.DoubleVar()
 
 global AOOR_LRL1
 AOOR_LRL1 = -1
@@ -367,7 +375,7 @@ def update_dict(string, value):
 
 def ini_file():
 
-    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1,'DOOR_LRL':DOOR_LRL1,'DOOR_URL':DOOR_URL1,'DOOR_MSR':DOOR_MSR1,'DOOR_VA':DOOR_VA1,'DOOR_VPW':DOOR_VPW1,'DOOR_AT':DOOR_AT1,'DOOR_ReaT':DOOR_ReaT1,'DOOR_RF':DOOR_RF1,'DOOR_RedT':DOOR_RecT1,'DOOR_FAVD':DOOR_FAVD1,'DOOR_AA':DOOR_AA1, 'DOOR_APW':DOOR_APW1}
+    data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'AAI_AS':AAI_AS1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1, 'VVI_VS':VVI_VS1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1,'DOOR_LRL':DOOR_LRL1,'DOOR_URL':DOOR_URL1,'DOOR_MSR':DOOR_MSR1,'DOOR_VA':DOOR_VA1,'DOOR_VPW':DOOR_VPW1,'DOOR_AT':DOOR_AT1,'DOOR_ReaT':DOOR_ReaT1,'DOOR_RF':DOOR_RF1,'DOOR_RedT':DOOR_RecT1,'DOOR_FAVD':DOOR_FAVD1,'DOOR_AA':DOOR_AA1, 'DOOR_APW':DOOR_APW1}
     
     with open('test_data.txt','w') as json_file:
         json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
@@ -421,8 +429,14 @@ def Button():
         tk.Label(window_mode_vvi, text='Ventricular Refractory Period(Int)(150-500ms): ').place(x=30,y=295)
         update_dict('VVI_VRP',VVI_VRP1)
 
+        VVI_VS1 = VVI_VS.get()
+        VS_value = tk.Entry(window_mode_vvi, textvariable = VVI_VS, font=('Arial',12))
+        VS_value.place(x=280,y=325)
+        tk.Label(window_mode_vvi, text='Ventricular Sensitivity(FLoat)(1.0mV-10mV): ').place(x=30,y=325)
+        update_dict('VVI_VS',VVI_VS1)
+
         VVI_Com = tk.Button(window_mode_vvi, text='VVI_COMPARE', command=M_VVI)
-        VVI_Com.place(x=50,y=350)
+        VVI_Com.place(x=50,y=365)
         if VVI_LRL1 == 0:
             print('1')
         else :
@@ -436,6 +450,8 @@ def Button():
                 tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_vvi)
             elif VVI_VRP1<150 or VVI_VRP1>500:
                 tkinter.messagebox.showerror('Error','VRP out of range!',parent=window_mode_vvi)
+            elif VVI_VS1<1.0 or VVI_VS1>10:
+                tkinter.messagebox.showerror('Error','VS out of range!',parent=window_mode_vvi)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_vvi)
             window_mode_vvi.destroy()
@@ -479,8 +495,14 @@ def Button():
         tk.Label(window_mode_aai, text='Atrial Refractory Period(Int)(150ms-500ms): ').place(x=30,y=295)
         update_dict('AAI_ARP',AAI_ARP1)
 
+        AAI_AS1 = AAI_AS.get()
+        AS_value = tk.Entry(window_mode_aai, textvariable = AAI_AS, font=('Arial',12))
+        AS_value.place(x=280,y=325)
+        tk.Label(window_mode_aai, text='Atrial Sensitivity(Float)(1.0mV-10mV): ').place(x=30,y=325)
+        update_dict('AAI_AS',AAI_AS1)
+
         AAI_Com = tk.Button(window_mode_aai, text='AAI_COMPARE', command=M_AAI)
-        AAI_Com.place(x=50,y=350)
+        AAI_Com.place(x=50,y=365)
         if AAI_LRL1 == 0:
             print('1')
         else :
@@ -495,6 +517,8 @@ def Button():
                 tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aai)
             elif AAI_ARP1<150 or AAI_ARP1>500:
                 tkinter.messagebox.showerror('Error','ARP out of range!',parent=window_mode_aai)
+            elif AAI_AS1<1.0 or AAI_AS1>10:
+                tkinter.messagebox.showerror('Error','AS out of range!',parent=window_mode_aai)
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aai)
             window_mode_aai.destroy()
