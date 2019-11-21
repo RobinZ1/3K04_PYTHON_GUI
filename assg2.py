@@ -391,9 +391,34 @@ d.ini_file()
 class Mode:
     def Button(self):
 
+
         window_mode_selection = tk.Toplevel()
         window_mode_selection.geometry('600x300')
         window_mode_selection.title('Mode Selection')
+
+         #Scrollbar
+        def data_scroll():
+        
+            scrollbar = tk.Scrollbar(window_mode_selection)
+            scrollbar.pack(side=tk.RIGHT, fill= tk.BOTH)
+
+            listbox = tk.Listbox(window_mode_selection, width = 60)
+            listbox.pack()
+
+            with open('test_data.txt','r') as json_file:
+                data_dict = json.load(json_file)
+                
+            for key, value in data_dict.items():
+                listbox.insert(tk.END, (key, value))
+
+            with open('test_data.txt','w') as json_file:
+                json.dump(data_dict, json_file)
+
+            listbox.config(yscrollcommand=scrollbar.set)
+            scrollbar.config(command=listbox.yview)
+
+        
+
     
         print(var_connect[0])
         if var_connect[0] == 1:
@@ -461,9 +486,12 @@ class Mode:
                     tkinter.messagebox.showerror('Error','VS out of range!',parent=window_mode_vvi)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_vvi)
+                
+                data_scroll()
                 window_mode_vvi.destroy()
-
-
+                window_mode_selection.destroy()
+                Button()
+  
 
 
         def M_AAI():
@@ -528,8 +556,12 @@ class Mode:
                     tkinter.messagebox.showerror('Error','AS out of range!',parent=window_mode_aai)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aai)
-                window_mode_aai.destroy()
+               
 
+                data_scroll()
+                window_mode_aai.destroy()
+                window_mode_selection.destroy()
+                Button()
 
         def M_VOO():
             window_mode_voo = tk.Toplevel(window)
@@ -568,6 +600,7 @@ class Mode:
             if VOO_LRL1 == 0:
                 pass
             else:
+
                 if VOO_LRL1<30 or VOO_LRL1>175:
                     tkinter.messagebox.showerror('Error','LRL out of range!',parent=window_mode_voo)
                     
@@ -579,15 +612,21 @@ class Mode:
                     
                 elif VOO_VPW1<0.1 or VOO_VPW1>1.9:
                     tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_voo)
-                    
-
-                else:
-                    tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
+                data_scroll()
+                Button()
                 window_mode_voo.destroy()
-    
+                window_mode_selection.destroy()
+
         
 
+        
+  
+     
 
+
+
+
+   
 
 
         def M_AOO():
@@ -636,7 +675,11 @@ class Mode:
                     tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aoo)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoo)
-                window_mode_aoo.destroy();
+             
+                data_scroll()
+                window_mode_aoo.destroy()
+                window_mode_selection.destroy()
+                Button()
 
 
 
@@ -654,6 +697,7 @@ class Mode:
 
             d.update_dict('DOD_LRL',DOO_LRL1)
 
+
         
             DOO_URL1 = DOO_URL.get()
             tk.Label(window_mode_doo, text='Upper Rate Limit(Int)(50ppm-175ppm): ').place(x=30,y=205)
@@ -665,7 +709,7 @@ class Mode:
             tk.Label(window_mode_doo, text='Fixed AV Delay(Int)(70ms-300ms): ').place(x=30,y=235)
             FAVD_value = tk.Entry(window_mode_doo, textvariable = DOO_FAVD, font=('Arial',12))
             FAVD_value.place(x=280,y=235)
-            
+
             d.update_dict('DOO_FAVD',DOO_FAVD1)
 
             DOO_AA1 = DOO_AA.get()
@@ -716,8 +760,11 @@ class Mode:
                     tkinter.messagebox.showerror('Error','VPW is out of range!',parent=window_mode_doo)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_doo)
-                window_mode_doo.destroy()
                 
+                data_scroll()
+                window_mode_doo.destroy()
+                window_mode_selection.destroy()
+                Button()
 
         def M_AOOR():
             window_mode_aoor = tk.Toplevel(window)
@@ -1222,10 +1269,6 @@ class Mode:
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_DOOR)
                 window_mode_DOOR.destroy()
-            
-            
-
-
 
 
 
@@ -1255,6 +1298,7 @@ class Mode:
         AAI_Bu = tk.Button(window_mode_selection, text='AAI_Bu', command= M_AAI)
         AAI_Bu.place(x=280,y=180)
 
+
         VVI_Bu = tk.Button(window_mode_selection, text='VVI_Bu',command= M_VVI)
         VVI_Bu.place(x=360,y=180)
 
@@ -1275,6 +1319,13 @@ class Mode:
 
         DOOR_Bu = tk.Button(window_mode_selection, text='DOOR_Bu',command= M_DOOR)
         DOOR_Bu.place(x=440,y=220)
+
+        data_scroll()
+    
+
+    
+
+
 
 class LoginPage:
     
