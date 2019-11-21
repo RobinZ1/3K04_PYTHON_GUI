@@ -588,6 +588,7 @@ def Button():
         update_dict('VOO_VPW',VOO_VPW1)
         VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO)
         VOO_Com.place(x=50,y=300)
+        
 
         if VOO_LRL1 == 0:
             pass
@@ -607,10 +608,14 @@ def Button():
 
             else:
                 tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
-            data_scroll()
-            window_mode_voo.destroy()
-            window_mode_selection.destroy()
-            Button()
+                data_scroll()
+                Button()
+                window_mode_voo.destroy()
+                window_mode_selection.destroy()
+
+        
+
+        
   
      
 
