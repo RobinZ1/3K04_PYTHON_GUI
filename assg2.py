@@ -369,21 +369,21 @@ class Dictionary:
         self.string = string
         self.value = value
         with open('test_data.txt', 'r') as json_file:
-            data_dict = json.load(json_file)
+            self.data_dict = json.load(json_file)
             print("updated\n")
-            print(data_dict)
-            data_dict[string] = value
-            print(data_dict)
+            print(self.data_dict)
+            self.data_dict[string] = value
+            print(self.data_dict)
         with open('test_data.txt', 'w') as json_file:   
-            json.dump(data_dict, json_file)
+            json.dump(self.data_dict, json_file)
             json_file.close()
 
     def ini_file(self):
         
-        data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'AAI_AS':AAI_AS1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1, 'VVI_VS':VVI_VS1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1,'DOOR_LRL':DOOR_LRL1,'DOOR_URL':DOOR_URL1,'DOOR_MSR':DOOR_MSR1,'DOOR_VA':DOOR_VA1,'DOOR_VPW':DOOR_VPW1,'DOOR_AT':DOOR_AT1,'DOOR_ReaT':DOOR_ReaT1,'DOOR_RF':DOOR_RF1,'DOOR_RedT':DOOR_RecT1,'DOOR_FAVD':DOOR_FAVD1,'DOOR_AA':DOOR_AA1, 'DOOR_APW':DOOR_APW1}
+        self.data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'AAI_AS':AAI_AS1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1, 'VVI_VS':VVI_VS1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1,'DOOR_LRL':DOOR_LRL1,'DOOR_URL':DOOR_URL1,'DOOR_MSR':DOOR_MSR1,'DOOR_VA':DOOR_VA1,'DOOR_VPW':DOOR_VPW1,'DOOR_AT':DOOR_AT1,'DOOR_ReaT':DOOR_ReaT1,'DOOR_RF':DOOR_RF1,'DOOR_RedT':DOOR_RecT1,'DOOR_FAVD':DOOR_FAVD1,'DOOR_AA':DOOR_AA1, 'DOOR_APW':DOOR_APW1}
         
         with open('test_data.txt','w') as json_file:
-            json.dump(data_dict, json_file) #the data_dict is now converted to JSON string 
+            json.dump(self.data_dict, json_file) #the data_dict is now converted to JSON string 
 d=Dictionary()
 d.ini_file()
 #Initializing the data_dict (IMPORTANT) AND USER LIMITS
@@ -404,7 +404,7 @@ class Mode:
 
             listbox = tk.Listbox(window_mode_selection, width = 60)
             listbox.pack()
-
+            
             with open('test_data.txt','r') as json_file:
                 data_dict = json.load(json_file)
                 
@@ -416,11 +416,10 @@ class Mode:
 
             listbox.config(yscrollcommand=scrollbar.set)
             scrollbar.config(command=listbox.yview)
-
         
 
-    
-        print(var_connect[0])
+
+
         if var_connect[0] == 1:
             tk.Label(window_mode_selection, text='Device is connected',font=('Arial',12)).place(x=200,y=260)
         else :
@@ -612,11 +611,17 @@ class Mode:
                     
                 elif VOO_VPW1<0.1 or VOO_VPW1>1.9:
                     tkinter.messagebox.showerror('Error','VPW out of range!',parent=window_mode_voo)
-
+                else:
+                    tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
+                
+                window_mode_voo.destroy()
+                
                 data_scroll()
                 Button()
-                window_mode_voo.destroy()
                 window_mode_selection.destroy()
+                
+                    
+                
         
 
         
@@ -1299,18 +1304,7 @@ class Mode:
 
 
 
-        #Scrollbar
-        scrollbar = tk.Scrollbar(window_mode_selection)
-        scrollbar.pack(side=tk.RIGHT, fill= tk.BOTH)
-
-        listbox = tk.Listbox(window_mode_selection, width = 60)
-        listbox.pack()
-
-        for i in range(50):
-            listbox.insert(tk.END, )
-
-        listbox.config(yscrollcommand=scrollbar.set)
-        scrollbar.config(command=listbox.yview)
+        
 
 
         AOO_Bu = tk.Button(window_mode_selection, text='AOO_Bu', command= M_AOO)
@@ -1345,6 +1339,9 @@ class Mode:
         DOOR_Bu.place(x=440,y=220)
 
         data_scroll()
+        
+        
+
     
 
     
