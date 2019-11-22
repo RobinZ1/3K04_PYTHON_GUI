@@ -566,13 +566,12 @@ class Mode:
             window_mode_voo = tk.Toplevel(window)
             window_mode_voo.geometry('500x500')
             window_mode_voo.title('VOO is selected!')
-        
-            VOO_LRL1 = VOO_LRL.get()
+
+
             LRL_value = tk.Entry(window_mode_voo, textvariable = VOO_LRL, font=('Arial',12))
             LRL_value.place(x=280,y=175)
             tk.Label(window_mode_voo, text='Lower Rate Limit(Int)(30ppm-175ppm): ').place(x=30,y=175)
             d.update_dict('VOO_LRL',VOO_LRL1)
-            
             
 
             VOO_URL1 = VOO_URL.get()
