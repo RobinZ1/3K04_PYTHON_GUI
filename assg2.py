@@ -592,7 +592,7 @@ class Mode:
             VPW_value.place(x=280,y=265)
             tk.Label(window_mode_voo, text='Ventricular Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=265)
             d.update_dict('VOO_VPW',VOO_VPW1)
-            VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=M_VOO)
+            VOO_Com = tk.Button(window_mode_voo, text='VOO_COMPARE', command=lambda:[M_VOO(),data_scroll(),window_mode_selection.destroy()])
             VOO_Com.place(x=50,y=300)
             
 
@@ -615,10 +615,9 @@ class Mode:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_voo)
                 
                 window_mode_voo.destroy()
+                self.Button()
                 
-                data_scroll()
-                Button()
-                window_mode_selection.destroy()
+                
                 
                     
                 
@@ -1373,7 +1372,6 @@ class LoginPage:
                 tkinter.messagebox.showerror('Error','The device has already registered!')
                 
                 var_connect[0]=0
-                print(var_connect[0])
             else:
         
                 device_info['DeviceID'] = idd
@@ -1383,7 +1381,7 @@ class LoginPage:
                 tkinter.messagebox.showinfo('Welcome','You have successfully saved your device!')
                 
                 var_connect[0] = 1
-                print(var_connect)
+                
                 window_save_device.destroy()
 
 
