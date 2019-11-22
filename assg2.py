@@ -535,7 +535,7 @@ class Mode:
             tk.Label(window_mode_aai, text='Atrial Sensitivity(Float)(1.0mV-10mV): ').place(x=30,y=325)
             d.update_dict('AAI_AS',AAI_AS1)
 
-            AAI_Com = tk.Button(window_mode_aai, text='AAI_COMPARE', command=M_AAI)
+            AAI_Com = tk.Button(window_mode_aai, text='AAI_COMPARE', command=lambda:[M_AAI(),data_scroll(),window_mode_selection.destroy()])
             AAI_Com.place(x=50,y=365)
             if AAI_LRL1 == 0:
                 print('1')
@@ -557,17 +557,17 @@ class Mode:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aai)
                
 
-                data_scroll()
+                
                 window_mode_aai.destroy()
-                window_mode_selection.destroy()
-                Button()
+                
+                self.Button()
 
         def M_VOO():
             window_mode_voo = tk.Toplevel(window)
             window_mode_voo.geometry('500x500')
             window_mode_voo.title('VOO is selected!')
 
-
+            VOO_LRL1 = VOO_LRL.get()
             LRL_value = tk.Entry(window_mode_voo, textvariable = VOO_LRL, font=('Arial',12))
             LRL_value.place(x=280,y=175)
             tk.Label(window_mode_voo, text='Lower Rate Limit(Int)(30ppm-175ppm): ').place(x=30,y=175)
@@ -667,7 +667,7 @@ class Mode:
             APW_value.place(x=280,y=265)
             d.update_dict('AOO_APW',AOO_APW1)
 
-            AOO_Com = tk.Button(window_mode_aoo, text='AOO_COMPARE', command=M_AOO)
+            AOO_Com = tk.Button(window_mode_aoo, text='AOO_COMPARE', command=lambda:[M_AOO(),data_scroll(),window_mode_selection.destroy()])
             AOO_Com.place(x=50,y=300)
             if AOO_LRL1 == 0:
                 print('1')
@@ -682,11 +682,12 @@ class Mode:
                     tkinter.messagebox.showerror('Error','APW out of range!',parent=window_mode_aoo)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoo)
-             
-                data_scroll()
+                
+                
                 window_mode_aoo.destroy()
-                window_mode_selection.destroy()
-                Button()
+                self.Button()
+                
+                
 
 
 
@@ -746,7 +747,7 @@ class Mode:
             VPW_value.place(x=280,y=355)
             d.update_dict('DOO_VPW',DOO_VPW1)
 
-            DOO_Com = tk.Button(window_mode_doo, text='DOO_COMPARE', command=M_DOO)
+            DOO_Com = tk.Button(window_mode_doo, text='DOO_COMPARE', command=lambda:[M_DOO(),data_scroll(),window_mode_selection.destroy()])
             DOO_Com.place(x=50,y=390)
             if DOO_LRL1 == 0:
                 print('1')
@@ -768,10 +769,10 @@ class Mode:
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_doo)
                 
-                data_scroll()
+               
                 window_mode_doo.destroy()
-                window_mode_selection.destroy()
-                Button()
+                
+                self.Button()
 
         def M_AOOR():
             window_mode_aoor = tk.Toplevel(window)
@@ -834,7 +835,7 @@ class Mode:
             tk.Label(window_mode_aoor, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
             d.update_dict('AOOR_RecT',AOOR_RecT1)
 
-            AOOR_Com = tk.Button(window_mode_aoor, text='AOOR_COMPARE', command=M_AOOR)
+            AOOR_Com = tk.Button(window_mode_aoor, text='AOOR_COMPARE', command=lambda:[M_AOOR(),data_scroll(),window_mode_selection.destroy()])
             AOOR_Com.place(x=50,y=450)
             if AOOR_LRL1 == 0:
                 print('1')
@@ -857,10 +858,10 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'RecT is out of range!',parent=window_mode_aoor)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aoor)
-                data_scroll()
-                Button()
+                
+                self.Button()
                 window_mode_aoor.destroy()
-                window_mode_selection.destroy()
+                
         
 
         def M_AAIR():
@@ -945,7 +946,7 @@ class Mode:
             tk.Label(window_mode_aair, text='PVARP(Int)(150ms-500ms): ').place(x=30,y=510)
             d.update_dict('AAIR_PVARP',AAIR_PVARP1)
 
-            AAIR_Com = tk.Button(window_mode_aair, text='AAIR_COMPARE', command=M_AAIR)
+            AAIR_Com = tk.Button(window_mode_aair, text='AAIR_COMPARE', command=lambda:[M_AAIR(),data_scroll(),window_mode_selection.destroy()])
             AAIR_Com.place(x=50,y=550)
             if AAIR_LRL1 == 0:
                 print('1')
@@ -974,10 +975,10 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'PVARP is out of range',parent=window_mode_aair)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_aair)
-                data_scroll()
-                Button()
+                
+                self.Button()
                 window_mode_aair.destroy()
-                window_mode_selection.destroy()
+                
         
 
 
@@ -1044,7 +1045,7 @@ class Mode:
             tk.Label(window_mode_VOOR, text='Recovery Time(Int)(2min-16min): ').place(x=30,y=420)
             d.update_dict('VOOR_RecT',VOOR_RecT1)
 
-            VOOR_Com = tk.Button(window_mode_VOOR, text='VOOR_COMPARE', command=M_VOOR)
+            VOOR_Com = tk.Button(window_mode_VOOR, text='VOOR_COMPARE', command=lambda:[M_VOOR(),data_scroll(),window_mode_selection.destroy()])
             VOOR_Com.place(x=50,y=460)
             if VOOR_LRL1 == 0:
                 print('1')
@@ -1067,10 +1068,10 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'RecT is out of range',parent=window_mode_VOOR)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VOOR)
-                data_scroll()
-                Button()
+                
+                self.Button()
                 window_mode_VOOR.destroy()
-                window_mode_selection.destroy()
+                
         
 
 
@@ -1148,7 +1149,7 @@ class Mode:
             tk.Label(window_mode_VVIR, text='Ventricular Refractory Period(Int)(150-500ms): ').place(x=30,y=480)
             d.update_dict('VVIR_VRP',VVIR_VRP1)
 
-            VVIR_Com = tk.Button(window_mode_VVIR, text='VVIR_COMPARE', command=M_VVIR)
+            VVIR_Com = tk.Button(window_mode_VVIR, text='VVIR_COMPARE', command=lambda:[M_VVIR(),data_scroll(),window_mode_selection.destroy()])
             VVIR_Com.place(x=50,y=510)
             if VVIR_LRL1 == 0:
                 print('1')
@@ -1175,10 +1176,10 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'VRP is out of range',parent=window_mode_VVIR)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_VVIR)
-                data_scroll()
-                Button()
+               
+                self.Button()
                 window_mode_VVIR.destroy()
-                window_mode_selection.destroy()
+                
         
             
             
@@ -1262,7 +1263,7 @@ class Mode:
             tk.Label(window_mode_DOOR, text='Atrial Pulse Width(Float)(0.1ms-1.9ms): ').place(x=30,y=510)
             d.update_dict('DOOR_APW',DOOR_APW1)
 
-            DOOR_Com = tk.Button(window_mode_DOOR, text='DOOR_COMPARE', command=M_DOOR)
+            DOOR_Com = tk.Button(window_mode_DOOR, text='DOOR_COMPARE', command=lambda:[M_DOOR(),data_scroll(),window_mode_selection.destroy()])
             DOOR_Com.place(x=50,y=550)
             if DOOR_LRL1 == 0:
                 print('1')
@@ -1291,10 +1292,10 @@ class Mode:
                     tkinter.messagebox.showerror('Error', 'APW is out of range',parent=window_mode_DOOR)
                 else:
                     tkinter.messagebox.showinfo('Passed','Values Saved!',parent=window_mode_DOOR)
-                data_scroll()
-                Button()
+                
+                self.Button()
                 window_mode_DOOR.destroy()
-                window_mode_selection.destroy()
+                
         
 
 
