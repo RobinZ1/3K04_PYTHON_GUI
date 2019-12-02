@@ -380,7 +380,7 @@ class Dictionary:
 
     def ini_file(self):
         
-        self.data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'AAI_AS':AAI_AS1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1, 'VVI_VS':VVI_VS1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RedT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RedT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RedT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RedT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1,'DOOR_LRL':DOOR_LRL1,'DOOR_URL':DOOR_URL1,'DOOR_MSR':DOOR_MSR1,'DOOR_VA':DOOR_VA1,'DOOR_VPW':DOOR_VPW1,'DOOR_AT':DOOR_AT1,'DOOR_ReaT':DOOR_ReaT1,'DOOR_RF':DOOR_RF1,'DOOR_RedT':DOOR_RecT1,'DOOR_FAVD':DOOR_FAVD1,'DOOR_AA':DOOR_AA1, 'DOOR_APW':DOOR_APW1}
+        self.data_dict = {'AOO_LRL':AOO_LRL1, 'AOO_URL': AOO_URL1, 'AOO_AA': AOO_AA1,'AOO_APW':AOO_APW1,'VOO_LRL':VOO_LRL1,'VOO_URL':VOO_URL1,'VOO_VA':VOO_VA1,'VOO_VPW':VOO_VPW1,'AAI_LRL':AAI_LRL1,'AAI_URL':AAI_URL1,'AAI_AA':AAI_AA1,'AAI_APW':AAI_APW1,'AAI_ARP':AAI_ARP1,'AAI_AS':AAI_AS1,'VVI_LRL':VVI_LRL1,'VVI_URL':VVI_URL1,'VVI_VA':VVI_VA1,'VVI_VPW':VVI_VPW1,'VVI_VRP':VVI_VRP1, 'VVI_VS':VVI_VS1,'DOO_LRL':DOO_LRL1,'DOO_URL':DOO_URL1,'DOO_FAVD':DOO_FAVD1,'DOO_AA':DOO_AA1,'DOO_VA':DOO_VA1,'DOO_APW':DOO_APW1,'DOO_VPW':DOO_VPW1,'AOOR_LRL':AOOR_LRL1,'AOOR_URL':AOOR_URL1,'AOOR_MSR':AOOR_MSR1,'AOOR_AA':AOOR_AA1,'AOOR_APW':AOOR_APW1,'AOOR_AT':AOOR_AT1,'AOOR_ReaT':AOOR_ReaT1,'AOOR_RF':AOOR_RF1,'AOOR_RecT':AOOR_RecT1,'AAIR_LRL':AAIR_LRL1,'AAIR_URL':AAIR_URL1,'AAIR_MSR':AAIR_MSR1,'AAIR_AA':AAIR_AA1,'AAIR_APW':AAIR_APW1,'AAIR_AT':AAIR_AT1,'AAIR_ReaT':AAIR_ReaT1,'AAIR_RF':AAIR_RF1,'AAIR_RecT':AAIR_RecT1,'AAIR_AS':AAIR_AS1,'AAIR_ARP':AAIR_ARP1,'AAIR_PVARP':AAIR_PVARP1,'VOOR_LRL':VOOR_LRL1,'VOOR_URL':VOOR_URL1,'VOOR_MSR':VOOR_MSR1,'VOOR_VA':VOOR_VA1,'VOOR_VPW':VOOR_VPW1,'VOOR_AT':VOOR_AT1,'VOOR_ReaT':VOOR_ReaT1,'VOOR_RF':VOOR_RF1,'VOOR_RecT':VOOR_RecT1,'VVIR_LRL':VVIR_LRL1,'VVIR_URL':VVIR_URL1,'VVIR_MSR':VVIR_MSR1,'VVIR_VA':VVIR_VA1,'VVIR_VPW':VVIR_VPW1,'VVIR_AT':VVIR_AT1,'VVIR_ReaT':VVIR_ReaT1,'VVIR_RF':VVIR_RF1,'VVIR_RecT':VVIR_RecT1,'VVIR_VS':VVIR_VS1,'VVIR_VRP':VVIR_VRP1,'DOOR_LRL':DOOR_LRL1,'DOOR_URL':DOOR_URL1,'DOOR_MSR':DOOR_MSR1,'DOOR_VA':DOOR_VA1,'DOOR_VPW':DOOR_VPW1,'DOOR_AT':DOOR_AT1,'DOOR_ReaT':DOOR_ReaT1,'DOOR_RF':DOOR_RF1,'DOOR_RecT':DOOR_RecT1,'DOOR_FAVD':DOOR_FAVD1,'DOOR_AA':DOOR_AA1, 'DOOR_APW':DOOR_APW1}
         
         with open('test_data.txt','w') as json_file:
             json.dump(self.data_dict, json_file) #the data_dict is now converted to JSON string 
@@ -705,7 +705,7 @@ class Mode:
                 LRL_value = tk.Entry(window_mode_doo, textvariable = DOO_LRL, font=('Arial',12))
                 LRL_value.place(x=280,y=175)
 
-                d.update_dict('DOD_LRL',DOO_LRL1)
+                d.update_dict('DOO_LRL',DOO_LRL1)
 
 
             
@@ -874,7 +874,7 @@ class Mode:
                 URL_value = tk.Entry(window_mode_aair, textvariable = AAIR_URL, font=('Arial',12))
                 URL_value.place(x=280,y=180)
                 tk.Label(window_mode_aair, text='Upper Rate Limit(Int)(50ppm-175ppm): ').place(x=30,y=180)
-                d.update_dict('AAUR_URL',AAIR_URL1)
+                d.update_dict('AAIR_URL',AAIR_URL1)
 
                 AAIR_MSR1 = AAIR_MSR.get()
                 MSR_value = tk.Entry(window_mode_aair, textvariable = AAIR_MSR, font=('Arial',12))
@@ -931,7 +931,7 @@ class Mode:
                 ARP_value = tk.Entry(window_mode_aair, textvariable = AAIR_ARP, font=('Arial',12))
                 ARP_value.place(x=280,y=450)
                 tk.Label(window_mode_aair, text='Atrial Refractory Period(Int)(150ms-500ms): ').place(x=30,y=450)
-                d.update_dict('AAIR_AT',AAIR_ARP1)
+                d.update_dict('AAIR_ARP',AAIR_ARP1)
 
                 AAIR_PVARP1 = AAIR_PVARP.get()
                 PVARP_value = tk.Entry(window_mode_aair, textvariable = AAIR_PVARP, font=('Arial',12))
@@ -1129,7 +1129,7 @@ class Mode:
                 VVIR_VS1 = VVIR_VS.get()
                 VS_value = tk.Entry(window_mode_VVIR, textvariable = VVIR_VS, font=('Arial',12))
                 VS_value.place(x=280,y=420)
-                tk.Label(window_mode_VVIR, text='Ventricular Sensitivity(Float)(0.1mV-10mV): ').place(x=30,y=420)
+                tk.Label(window_mode_VVIR, text='Ventricular Sensitivity(Float)(1.0mV-10mV): ').place(x=30,y=420)
                 d.update_dict('VVIR_VS',VVIR_VS1)
 
                 VVIR_VRP1 = VVIR_VRP.get()
@@ -1424,6 +1424,7 @@ class LoginPage:
 
             with open('usrs_info.pickle','rb')as usr_file:
                 exist_usr_info = pickle.load(usr_file)
+            
 
             if np != npf:
                 tkinter.messagebox.showerror('Error','Password and confirm password must be the same!')
@@ -1449,7 +1450,7 @@ class LoginPage:
                 with open('usr_number.txt','r') as number_file:
                     usr_number = json.load(number_file)
                     
-                if usr_number['userNumbers'] < 1:
+                if usr_number['userNumbers'] >= 0 and usr_number['userNumbers'] < 10 :
                     usr_number['userNumbers'] += 1
                     with open('usr_number.txt','w') as number_file:
                         json.dump(usr_number, number_file)

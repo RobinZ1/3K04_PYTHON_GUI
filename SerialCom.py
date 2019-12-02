@@ -28,6 +28,7 @@ def connect():
     device = tk.Tk();
     device.title("Device")
     device.geometry('300x200')
+    device,mainloop()
     tk.Label(device, text="Device name:",fg='blue').place(x=10, y = 70)
         
     tk.Label(device, text=ports[0].device).place(x=120, y = 70)
